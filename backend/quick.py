@@ -66,9 +66,6 @@ def scan_ssh(address, cidr, cp, nd):
         s.settimeout(SOCKET_TIMEOUT)
         result = s.connect_ex((str(ip), 22)) # SSH port 22
 
-        i = s.gethostbyaddr(ip)
-        print(i[0])
-
         # Check if SSH port is open
         if result == RESULT_TRUE:
             # Loop through username/password combinations
@@ -90,7 +87,7 @@ def scan_ssh(address, cidr, cp, nd):
 
                     # Returns a triple (hostname, aliaslist, ipaddrlist)
                     #   - See python documentation for socket
-                    host_info = s.gethostbyaddr(str(ip))
+                    host_info = socket.gethostbyaddr(str(ip))
 
                     # Append a triple ('hostname', 'ip_address', 'SSH/Telnet')
                     vulnerables.append((host_info[0], str(ip), 'SSH'))
@@ -103,6 +100,9 @@ def scan_ssh(address, cidr, cp, nd):
                     continue
                 except (SSHException, BadHostKeyException, Exception):
                     break
+        else:
+            i = socket.gethostbyaddr(str(ip))
+            print('No vulnerability found for: ' + str(ip) + ' | ' + i[0])
 
         # Close the socket
         s = None
@@ -111,4 +111,4 @@ def scan_ssh(address, cidr, cp, nd):
     # or if nothing was found then return empty JSON
     return vulnerables
 
-print(scan_ssh('92.1.195.171', '32', 0, 1))
+# print('Vulnerables: ' + str(scan_ssh('92.1.195.171', '24', 0, 1)))
