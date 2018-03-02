@@ -6,7 +6,7 @@ import socket
 import json
 
 RESULT_TRUE = 0
-SOCKET_TIMEOUT = 1.75
+SOCKET_TIMEOUT = 2
 BRUTEFORCE_TIMEOUT = 2.75
 # A list of root account username/password combinations for IoT devices
 IOT_ROOT_USER_COMBINATIONS = ('root', 'xc3511'), ('root', 'vizxv'), ('root', 'admin'), ('admin', 'admin'), ('root', '888888'), ('root', 'xmhdipc'), ('root', 'default'), ('root', 'juantech'), ('root', '123456'), ('root', '54321'), ('support', 'support'), ('root', ''), ('admin', 'password'), ('root', 'root'), ('root', '12345'), ('user', 'user'), ('admin', '(none)'), ('root', 'pass'), ('admin', 'admin1234'), ('root', '1111'), ('admin', 'smcadmin'), ('admin', '1111'), ('root', '666666'), ('root', 'password'), ('root', '1234'), ('root', 'klv123'), ('Administrator', 'admin'), ('service', 'service'), ('supervisor', 'supervisor'), ('guest', 'guest'), ('guest', '12345'), ('guest', '12345'), ('admin1', 'password'), ('administrator', '1234'), ('666666', '666666'), ('888888', '888888'), ('ubnt', 'ubnt'), ('root', 'klv1234'), ('root', 'Zte521'), ('root', 'hi3518'), ('root', 'jvbzd'), ('root', 'anko'), ('root', 'zlxx.'), ('root', '7ujMko0vizxv'), ('root', '7ujMko0admin'), ('root', 'system'), ('root', 'ikwb'), ('root', 'dreambox'), ('root', 'user'), ('root', 'realtek'), ('root', '00000000'), ('admin', '1111111'), ('admin', '1234'), ('admin', '12345'), ('admin', '54321'), ('admin', '123456'), ('admin', '7ujMko0admin'), ('admin', '1234'), ('admin', 'pass'), ('admin', 'meinsm'), ('tech', 'tech'), ('mother', 'fucker')
@@ -68,6 +68,7 @@ def scan_ssh(address, cidr, cp, nd):
 
         # Check if SSH port is open
         if result == RESULT_TRUE:
+            print('SSH port open on: ' + str(ip))
             # Loop through username/password combinations
             for acc in IOT_ROOT_USER_COMBINATIONS:
                 try:
@@ -111,4 +112,23 @@ def scan_ssh(address, cidr, cp, nd):
     # or if nothing was found then return empty JSON
     return vulnerables
 
-# print('Vulnerables: ' + str(scan_ssh('92.1.195.171', '24', 0, 1)))
+# Telnet Scanning Function
+# ======================
+# Arguments
+#   - address: IP address
+#   - cidr: CIDR prefix to specify address range
+#   - cp: Change password on device and notify of change?
+#   - nd: Notify device of vulnerability?
+#
+# Description
+#   - Scans a specified network range and attempts to bruteforce into
+#     the root accounts found on the IP addresses found using the default
+#     list of username/password combinations defined as `passwords`, using
+#     a Telnet connection
+def scan_telnet(address, cidr, cp, nd):
+    return []
+
+# TODO: Get command line arguments
+# TODO: Pass to scan function to run the appropriate scan
+
+print('Vulnerables: ' + str(scan_ssh('92.1.195.171', '30', 0, 1)))
