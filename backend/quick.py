@@ -7,7 +7,7 @@ import json
 
 RESULT_TRUE = 0
 SOCKET_TIMEOUT = 2
-BRUTEFORCE_TIMEOUT = 2.75
+BRUTEFORCE_TIMEOUT = 3
 # A list of root account username/password combinations for IoT devices
 IOT_ROOT_USER_COMBINATIONS = ('admin1', 'password'), ('root', 'xc3511'), ('root', 'vizxv'), ('root', 'admin'), ('admin', 'admin'), ('root', '888888'), ('root', 'xmhdipc'), ('root', 'default'), ('root', 'juantech'), ('root', '123456'), ('root', '54321'), ('support', 'support'), ('root', ''), ('admin', 'password'), ('root', 'root'), ('root', '12345'), ('user', 'user'), ('admin', '(none)'), ('root', 'pass'), ('admin', 'admin1234'), ('root', '1111'), ('admin', 'smcadmin'), ('admin', '1111'), ('root', '666666'), ('root', 'password'), ('root', '1234'), ('root', 'klv123'), ('Administrator', 'admin'), ('service', 'service'), ('supervisor', 'supervisor'), ('guest', 'guest'), ('guest', '12345'), ('guest', '12345'), ('admin1', 'password'), ('administrator', '1234'), ('666666', '666666'), ('888888', '888888'), ('ubnt', 'ubnt'), ('root', 'klv1234'), ('root', 'Zte521'), ('root', 'hi3518'), ('root', 'jvbzd'), ('root', 'anko'), ('root', 'zlxx.'), ('root', '7ujMko0vizxv'), ('root', '7ujMko0admin'), ('root', 'system'), ('root', 'ikwb'), ('root', 'dreambox'), ('root', 'user'), ('root', 'realtek'), ('root', '00000000'), ('admin', '1111111'), ('admin', '1234'), ('admin', '12345'), ('admin', '54321'), ('admin', '123456'), ('admin', '7ujMko0admin'), ('admin', '1234'), ('admin', 'pass'), ('admin', 'meinsm'), ('tech', 'tech'), ('mother', 'fucker')
 # A list of triples to identify a vulnerable device was found
@@ -61,6 +61,8 @@ def scan(address, cidr, mode, cp, nd):
 def scan_ssh(address, cidr, cp, nd):
     # Loop through ip addresses in the network range specified
     for ip in IPNetwork(address + '/' + cidr):
+        print('Trying SSH for IP "' + str(ip) + '" ...')
+        
         for acc in IOT_ROOT_USER_COMBINATIONS:
             try:
                 # Create a new SSHClient
@@ -119,4 +121,4 @@ def scan_telnet(address, cidr, cp, nd):
 # TODO: Get command line arguments
 # TODO: Pass to scan function to run the appropriate scan
 
-# print('Vulnerables: ' + str(scan_ssh('127.0.0.1', '29', 0, 1)))
+print('Vulnerables: ' + str(scan_ssh('127.0.0.1', '24', 0, 1)))
