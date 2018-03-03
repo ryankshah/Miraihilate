@@ -26,13 +26,41 @@ IOT_ROOT_USER_COMBINATIONS = ('admin1', 'password'), ('root', 'xc3511'), ('root'
 #
 # TODO: Fix request timeout errors
 def scan_ssh(address, cidr, cp, nd):
-    # A list of triples to identify a vulnerable device was found
-    # in the form of (hostname, ip, mode)
-    vulnerables = []
+    log = []
+    iprange = IPNetwork(address + '/' + cidr)
+    vulnerable_count = 0
+
+    log_title = 'Miraihilate is starting SSH scan on network: ' + address + '/' + cidr
+    log.append(log_title)
+    log.append('=' * len(log_title))
+    log.append('')
+
+    scan_spec_title = 'SSH Scan Specification'
+    log.append(scan_spec_title)
+    log.append('=' * len(scan_spec_title))
+    log.append('')
+    log.append('Scanning Mode: SSH')
+    log.append('IP address range: ' + str(iprange[0]) + ' - ' + str(iprange[-1]))
+
+    if cp == 0:
+        log.append('Changing device passwords? - No')
+    else:
+        log.append('Changing device passwords? - Yes')
+
+    if nd == 0:
+        log.append('Notify device about vulnerability? - No')
+    else:
+        log.append('Notify device about vulnerability? - Yes')
+
+    log.append('')
+    results_title = 'Scan Results'
+    log.append(results_title)
+    log.append('=' * len(results_title))
+    log.append('')
 
     # Loop through ip addresses in the network range specified
-    for ip in IPNetwork(address + '/' + cidr):
-        print('Trying SSH for IP "' + str(ip) + '" ...')
+    for ip in iprange:
+        log.append('Trying SSH for IP "' + str(ip) + '" ...')
 
         for acc in IOT_ROOT_USER_COMBINATIONS:
             try:
@@ -49,37 +77,44 @@ def scan_ssh(address, cidr, cp, nd):
 
                 # Connect to an SSH server and authenticate to it
                 # Port 2281 is used for VM testing (actual SSH port is 22)
-                device.connect(str(ip), username=acc[0], password=acc[1], port=22, timeout=BRUTEFORCE_TIMEOUT)
+                device.connect(str(ip), username=acc[0], password=acc[1], port=2281, timeout=BRUTEFORCE_TIMEOUT)
+
+                log.append('  - This device is vulnerable!')
+                vulnerable_count += 1
 
                 # Check if notify device option was checked
                 # TODO: Fix notifying device
                 if nd == 1:
-                    # device.exec_command('')
-                    device.exec_command("notify-send 'Miraihilate Alert!' 'A vulnerability has been detected in your device, linked with Mirai malware.'")
-
-                # Returns a triple (hostname, aliaslist, ipaddrlist)
-                #   - See python documentation for socket
-                host_info = socket.gethostbyaddr(str(ip))
-
-                # Append a triple ('hostname', 'ip_address', 'SSH/Telnet')
-                vulnerables.append((host_info[0], str(ip), 'SSH'))
+                    device.exec_command("notify-send 'Miraihilate Alert!' 'A vulnerability has been detected in your device, which has been linked with Mirai malware.'")
+                    log.append('  - The device was alerted about the vulnerability.')
+                else:
+                    log.append('  - This device was not alerted about the vulnerability.')
 
                 # Close the SSHClient and its underlying Transport
                 device.close()
 
-                print('Vulnerable found on IP ' + str(ip) + '!')
+                log.append('  - Closing device...')
 
                 break
             except AuthenticationException:
                 continue
             except (SSHException, BadHostKeyException, Exception):
+                log.append('  - Could not connect to device via SSH!')
                 break
+
+    log.append('')
+    if vulnerable_count == 0:
+        log.append('No vulnerable devices were found during this scan!')
+    elif vulnerable_count == 1:
+        log.append(str(vulnerable_count) + ' vulnerable device was found!')
+    else:
+        log.append(str(vulnerable_count) + ' vulnerable devices were found!')
 
     # Return the vulnerable list and JSON output
     # or if nothing was found then return empty JSON
-    return vulnerables
+    return json.dumps(log, indent=4)
 
 # TODO: Get command line arguments
 # TODO: Pass to scan function to run the appropriate scan
 
-# print('Vulnerables: ' + str(scan_ssh('127.0.0.1', '24', 0, 1)))
+print(scan_ssh('127.0.0.1', '30', 0, 1))
