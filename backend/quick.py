@@ -4,15 +4,12 @@ from telnetlib import Telnet
 import paramiko
 import socket
 import json
+import time
 
 RESULT_TRUE = 0
-SOCKET_TIMEOUT = 2
 BRUTEFORCE_TIMEOUT = 3
 # A list of root account username/password combinations for IoT devices
 IOT_ROOT_USER_COMBINATIONS = ('admin1', 'password'), ('root', 'xc3511'), ('root', 'vizxv'), ('root', 'admin'), ('admin', 'admin'), ('root', '888888'), ('root', 'xmhdipc'), ('root', 'default'), ('root', 'juantech'), ('root', '123456'), ('root', '54321'), ('support', 'support'), ('root', ''), ('admin', 'password'), ('root', 'root'), ('root', '12345'), ('user', 'user'), ('admin', '(none)'), ('root', 'pass'), ('admin', 'admin1234'), ('root', '1111'), ('admin', 'smcadmin'), ('admin', '1111'), ('root', '666666'), ('root', 'password'), ('root', '1234'), ('root', 'klv123'), ('Administrator', 'admin'), ('service', 'service'), ('supervisor', 'supervisor'), ('guest', 'guest'), ('guest', '12345'), ('guest', '12345'), ('admin1', 'password'), ('administrator', '1234'), ('666666', '666666'), ('888888', '888888'), ('ubnt', 'ubnt'), ('root', 'klv1234'), ('root', 'Zte521'), ('root', 'hi3518'), ('root', 'jvbzd'), ('root', 'anko'), ('root', 'zlxx.'), ('root', '7ujMko0vizxv'), ('root', '7ujMko0admin'), ('root', 'system'), ('root', 'ikwb'), ('root', 'dreambox'), ('root', 'user'), ('root', 'realtek'), ('root', '00000000'), ('admin', '1111111'), ('admin', '1234'), ('admin', '12345'), ('admin', '54321'), ('admin', '123456'), ('admin', '7ujMko0admin'), ('admin', '1234'), ('admin', 'pass'), ('admin', 'meinsm'), ('tech', 'tech'), ('mother', 'fucker')
-# A list of triples to identify a vulnerable device was found
-# in the form of (hostname, ip, mode)
-vulnerables = []
 
 # Scan Redirect Function
 # =======================
@@ -59,10 +56,14 @@ def scan(address, cidr, mode, cp, nd):
 #     list of username/password combinations defined as `passwords`, using
 #     an SSH connection
 def scan_ssh(address, cidr, cp, nd):
+    # A list of triples to identify a vulnerable device was found
+    # in the form of (hostname, ip, mode)
+    vulnerables = []
+
     # Loop through ip addresses in the network range specified
     for ip in IPNetwork(address + '/' + cidr):
         print('Trying SSH for IP "' + str(ip) + '" ...')
-        
+
         for acc in IOT_ROOT_USER_COMBINATIONS:
             try:
                 # Create a new SSHClient
@@ -78,7 +79,14 @@ def scan_ssh(address, cidr, cp, nd):
 
                 # Connect to an SSH server and authenticate to it
                 # Port 2281 is used for VM testing (actual SSH port is 22)
-                device.connect(str(ip), username=acc[0], password=acc[1], port=2281, timeout=BRUTEFORCE_TIMEOUT)
+                device.connect(str(ip), username=acc[0], password=acc[1], port=22, timeout=BRUTEFORCE_TIMEOUT)
+
+                # Check if notify device option was checked
+                if nd == 1:
+                    device.exec_command('tput bel')
+                    device.exec_command('say "motherfucker"')
+                    #device.exec_command('')
+                    #device.exec_command("notify-send 'Miraihilate Alert!' 'A vulnerability has been detected in your device, linked with Mirai malware.'")
 
                 # Returns a triple (hostname, aliaslist, ipaddrlist)
                 #   - See python documentation for socket
@@ -115,10 +123,36 @@ def scan_ssh(address, cidr, cp, nd):
 #     the root accounts found on the IP addresses found using the default
 #     list of username/password combinations defined as `passwords`, using
 #     a Telnet connection
+#
+# TODO: Finish Telnet scanning
 def scan_telnet(address, cidr, cp, nd):
-    return []
+    # A list of triples to identify a vulnerable device was found
+    # in the form of (hostname, ip, mode)
+    vulnerables = []
+
+    for ip in IPNetwork(address + '/' + cidr):
+        print('Trying Telnet for IP "' + str(ip) + '" ...')
+
+        # Attempt to open a Telnet connection
+        try:
+            tnet = Telnet(str(ip), 2282, BRUTEFORCE_TIMEOUT)
+        except Exception as e:
+            # Try next IP if Telnet connection failed
+            print('\tFailed to connect with Telnet\n')
+            continue # Keep trying other passwords
+
+        # The connection has been established!
+        print('* Telnet was successful! *')
+
+        # TODO: Try username and password combinations to access device
+        # for acc in IOT_ROOT_USER_COMBINATIONS:
+
+        break
+
+    return vulnerables
 
 # TODO: Get command line arguments
 # TODO: Pass to scan function to run the appropriate scan
 
-print('Vulnerables: ' + str(scan_ssh('127.0.0.1', '24', 0, 1)))
+# print('Vulnerables: ' + str(scan_ssh('127.0.0.1', '24', 0, 1)))
+print('\nVulnerables: ' + str(scan_telnet('127.0.0.1', '24', 0, 1)))
