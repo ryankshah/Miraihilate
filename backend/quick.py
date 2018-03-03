@@ -1,6 +1,7 @@
 from netaddr import IPNetwork
 from paramiko.ssh_exception import AuthenticationException, SSHException, BadHostKeyException
 from telnetlib import Telnet
+from datetime import datetime
 import paramiko
 import socket
 import json
@@ -26,6 +27,7 @@ IOT_ROOT_USER_COMBINATIONS = ('admin1', 'password'), ('root', 'xc3511'), ('root'
 #
 # TODO: Fix request timeout errors
 def scan_ssh(address, cidr, cp, nd):
+    start_timestamp = datetime.now()
     log = []
     iprange = IPNetwork(address + '/' + cidr)
     vulnerable_count = 0
@@ -112,9 +114,11 @@ def scan_ssh(address, cidr, cp, nd):
 
     # Return the vulnerable list and JSON output
     # or if nothing was found then return empty JSON
-    return json.dumps(log, indent=4)
+    return (start_timestamp, json.dumps(log, indent=4))
 
-# TODO: Get command line arguments
+# TODO: Get command line arguments (uuid, ip, cidr, changepass, notifydevice)
 # TODO: Pass to scan function to run the appropriate scan
 
-print(scan_ssh('127.0.0.1', '30', 0, 1))
+# Prepare other variables for insertion into log database
+scan = scan_ssh('127.0.0.1', '30', 0, 1) # [0] = start timestamp, [1] = scan log
+end_timestamp = datetime.now()
