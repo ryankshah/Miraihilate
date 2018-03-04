@@ -23,3 +23,7 @@ Python version > 3.x required
 * `mysql-connector-repackaged`
 * `netaddr`
 * `paramiko`
+* `colorama`
+* `termcolor`
+* `pyfiglet`
+* `bcrypt`
