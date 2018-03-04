@@ -41,7 +41,7 @@ def create_user(uuid, first, last, email):
         # Generate raw, cryptographically secure password
         raw_pwd = gen_sec_pwd()
         # Hash a password for the first time, with a randomly-generated salt
-        pwd_hash = bcrypt.hashpw(raw_pwd.encode('ascii'), bcrypt.gensalt())
+        pwd_hash = bcrypt.hashpw(raw_pwd.encode('ascii'), bcrypt.gensalt(prefix=b"2a"))
 
         cursor.execute(sql, (str(uuid), first, last, email, pwd_hash, 1,))
         conn.commit()

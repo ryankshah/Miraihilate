@@ -4,3 +4,4 @@ report/
 client/client.iml
 client/.idea/
 client/out/
+client/target/
