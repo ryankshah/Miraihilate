@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Helper class for initiating a database connection
+ */
 public class DBHelper
 {
     private static final String DB_URL = "jdbc:mysql://localhost:8889/miraihilate";
