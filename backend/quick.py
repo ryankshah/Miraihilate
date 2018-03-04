@@ -2,14 +2,41 @@ from netaddr import IPNetwork
 from paramiko.ssh_exception import AuthenticationException, SSHException, BadHostKeyException
 from telnetlib import Telnet
 from datetime import datetime
+from mysql.connector import Error
+import mysql.connector
 import paramiko
 import socket
 import json
 import time
+import sys
 
 BRUTEFORCE_TIMEOUT = 3
 # A list of root account username/password combinations for IoT devices
 IOT_ROOT_USER_COMBINATIONS = ('admin1', 'password'), ('root', 'xc3511'), ('root', 'vizxv'), ('root', 'admin'), ('admin', 'admin'), ('root', '888888'), ('root', 'xmhdipc'), ('root', 'default'), ('root', 'juantech'), ('root', '123456'), ('root', '54321'), ('support', 'support'), ('root', ''), ('admin', 'password'), ('root', 'root'), ('root', '12345'), ('user', 'user'), ('admin', '(none)'), ('root', 'pass'), ('admin', 'admin1234'), ('root', '1111'), ('admin', 'smcadmin'), ('admin', '1111'), ('root', '666666'), ('root', 'password'), ('root', '1234'), ('root', 'klv123'), ('Administrator', 'admin'), ('service', 'service'), ('supervisor', 'supervisor'), ('guest', 'guest'), ('guest', '12345'), ('guest', '12345'), ('admin1', 'password'), ('administrator', '1234'), ('666666', '666666'), ('888888', '888888'), ('ubnt', 'ubnt'), ('root', 'klv1234'), ('root', 'Zte521'), ('root', 'hi3518'), ('root', 'jvbzd'), ('root', 'anko'), ('root', 'zlxx.'), ('root', '7ujMko0vizxv'), ('root', '7ujMko0admin'), ('root', 'system'), ('root', 'ikwb'), ('root', 'dreambox'), ('root', 'user'), ('root', 'realtek'), ('root', '00000000'), ('admin', '1111111'), ('admin', '1234'), ('admin', '12345'), ('admin', '54321'), ('admin', '123456'), ('admin', '7ujMko0admin'), ('admin', '1234'), ('admin', 'pass'), ('admin', 'meinsm'), ('tech', 'tech'), ('mother', 'fucker')
+
+def log_to_db(uuid, data, start_timestamp, end_timestamp):
+    try:
+        config = {
+          'user': 'root',
+          'password': 'root',
+          'host': 'localhost',
+          'database': 'miraihilate',
+          'port': 8889 # MAMP MySQL port
+        }
+
+        conn = mysql.connector.connect(**config)
+
+        cursor = conn.cursor(prepared=True)
+
+        sql = 'INSERT INTO scan_logs (user_uuid, data, start_timestamp, end_timestamp) VALUES (%s, %s, %s, %s)'
+
+        cursor.execute(sql, (uuid, data, start_timestamp, end_timestamp))
+        conn.commit()
+
+        cursor.close()
+        conn.close()
+    except Error as e:
+        print(e)
 
 # SSH Scanning Function
 # ======================
@@ -92,6 +119,8 @@ def scan_ssh(address, cidr, cp, nd):
                 else:
                     log.append('  - This device was not alerted about the vulnerability.')
 
+                # TODO: Check if user want's to change device password `cp`
+
                 # Close the SSHClient and its underlying Transport
                 device.close()
 
@@ -116,9 +145,18 @@ def scan_ssh(address, cidr, cp, nd):
     # or if nothing was found then return empty JSON
     return (start_timestamp, json.dumps(log, indent=4))
 
-# TODO: Get command line arguments (uuid, ip, cidr, changepass, notifydevice)
-# TODO: Pass to scan function to run the appropriate scan
 
+uuid = sys.argv[1]
+ip = sys.argv[2]
+cidr = sys.argv[3]
+cp = sys.argv[4]
+nd = sys.argv[5]
+
+'127.0.0.1', '30', 0, 1
 # Prepare other variables for insertion into log database
-scan = scan_ssh('127.0.0.1', '30', 0, 1) # [0] = start timestamp, [1] = scan log
+scan = scan_ssh(ip, cidr, cp, nd) # [0] = start timestamp, [1] = scan log
 end_timestamp = datetime.now()
+
+log_to_db(uuid, scan[1], scan[0], end_timestamp)
+
+print('success')
