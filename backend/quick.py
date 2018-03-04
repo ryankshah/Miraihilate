@@ -152,7 +152,6 @@ cidr = sys.argv[3]
 cp = sys.argv[4]
 nd = sys.argv[5]
 
-'127.0.0.1', '30', 0, 1
 # Prepare other variables for insertion into log database
 scan = scan_ssh(ip, cidr, cp, nd) # [0] = start timestamp, [1] = scan log
 end_timestamp = datetime.now()

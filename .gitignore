@@ -1,2 +1,6 @@
 report/
 /.DS_STORE
+
+client/client.iml
+client/.idea/
+client/out/
