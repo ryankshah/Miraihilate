@@ -1,20 +1,24 @@
 package io.ryankshah;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import io.ryankshah.client.User;
+import io.ryankshah.client.event.ClientActionHandler;
 import io.ryankshah.client.gui.QuickScanPanel;
 import io.ryankshah.util.database.DBHelper;
 import io.ryankshah.util.resource.ResourceLoader;
-import org.mindrot.jbcrypt.BCrypt;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.UUID;
 
 /**
  * Client interface class
@@ -29,8 +33,13 @@ public class Client extends JFrame
     public static JButton advancedScanButton, scanHistoryButton, performLastScanButton, editProfileButton, userGuideButton, logoutButton;
     public static JTextArea recentScanResult;
 
+    public static Client INSTANCE;
+    private ActionListener clientActionListener;
+
     public Client(User user) {
         this.user = user;
+        this.INSTANCE= this;
+        this.clientActionListener = new ClientActionHandler();
 
         setTitle("Miraihilate Client " + VERSION);
         setSize(new Dimension(WIDTH, HEIGHT));
@@ -90,16 +99,22 @@ public class Client extends JFrame
         buttonsPanel.setBounds(360, 30 + (HEIGHT - 233), WIDTH - (WIDTH - 420), 170);
         buttonsPanel.setLayout(new GridLayout(2, 3));
             advancedScanButton = new JButton("Advanced Scan");
+            advancedScanButton.addActionListener(clientActionListener);
             buttonsPanel.add(advancedScanButton);
             scanHistoryButton = new JButton("Scan History");
+            scanHistoryButton.addActionListener(clientActionListener);
             buttonsPanel.add(scanHistoryButton);
             performLastScanButton = new JButton("Perform Last Scan");
+            performLastScanButton.addActionListener(clientActionListener);
             buttonsPanel.add(performLastScanButton);
             editProfileButton = new JButton("Edit Profile");
+            editProfileButton.addActionListener(clientActionListener);
             buttonsPanel.add(editProfileButton);
             userGuideButton = new JButton("User Guide");
+            userGuideButton.addActionListener(clientActionListener);
             buttonsPanel.add(userGuideButton);
             logoutButton = new JButton("Logout");
+            logoutButton.addActionListener(clientActionListener);
             buttonsPanel.add(logoutButton);
         add(buttonsPanel);
     }
@@ -117,10 +132,12 @@ public class Client extends JFrame
             // While a result exists
             while(results.next()) {
                 String data = results.getString("data");
-                if(data.equals(""))
+                if(data.equals("") || data == null) {
                     recentScanResult.setText("No recent scan found!");
-                else
+                } else {
+                    //TODO: Parse JSON String to text
                     recentScanResult.setText(data);
+                }
             }
 
             // Closing up the connection

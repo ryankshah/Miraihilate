@@ -14,9 +14,6 @@ public class ScriptExecutor
             BufferedReader stdInput = new BufferedReader(new
                     InputStreamReader(p.getInputStream()));
 
-            BufferedReader stdError = new BufferedReader(new
-                    InputStreamReader(p.getErrorStream()));
-
             // Read the output from the command
             String s;
             while ((s = stdInput.readLine()) != null) {

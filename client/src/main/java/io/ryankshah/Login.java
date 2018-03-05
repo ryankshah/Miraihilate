@@ -72,7 +72,7 @@ public class Login extends JFrame implements ActionListener
                     || passwordField.getPassword() == null || passwordField.getPassword().length == 0) {
                 JOptionPane.showMessageDialog(null, "One or more fields were left blank!");
             } else {
-                // TODO: Valid email format
+                // TODO: Validate email format
                 boolean validated = validateUser();
             }
         }
