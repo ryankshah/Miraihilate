@@ -2,12 +2,19 @@ package io.ryankshah;
 
 import io.ryankshah.client.User;
 import io.ryankshah.client.gui.QuickScanPanel;
-import io.ryankshah.util.database.ImageLoader;
+import io.ryankshah.util.database.DBHelper;
+import io.ryankshah.util.resource.ResourceLoader;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.UUID;
 
 /**
  * Client interface class
@@ -17,9 +24,10 @@ public class Client extends JFrame
     protected static final int WIDTH = 800, HEIGHT = 640;
     protected static final String VERSION = "0.0.1-ALPHA";
 
-    private User user;
+    public static User user;
 
-    private JButton editProfileButton, scanHistoryButton, performLastScanButton, userGuideButton, logoutButton;
+    public static JButton advancedScanButton, scanHistoryButton, performLastScanButton, editProfileButton, userGuideButton, logoutButton;
+    public static JTextArea recentScanResult;
 
     public Client(User user) {
         this.user = user;
@@ -27,7 +35,7 @@ public class Client extends JFrame
         setTitle("Miraihilate Client " + VERSION);
         setSize(new Dimension(WIDTH, HEIGHT));
 
-        setIconImage(ImageLoader.getImageIconResource("icon.png").getImage());
+        setIconImage(ResourceLoader.getImageIconResource("icon.png").getImage());
 
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,7 +50,7 @@ public class Client extends JFrame
 
 
     private void initComponents() {
-        ImageIcon img = ImageLoader.getImageIconResource("logo.png");
+        ImageIcon img = ResourceLoader.getImageIconResource("logo.png");
         JLabel miraihilateLogo = new JLabel(img);
         miraihilateLogo.setBounds(10, 0, 300, 100);
         add(miraihilateLogo);
@@ -66,26 +74,63 @@ public class Client extends JFrame
         scanResultPanel.setBorder(resultBorder);
         scanResultPanel.setBounds(360, 10, WIDTH - (WIDTH - 420), HEIGHT - 233);
         scanResultPanel.setLayout(new GridLayout(1, 2));
-            JTextArea recentScanResult = new JTextArea();
+            recentScanResult = new JTextArea();
             recentScanResult.setEditable(false);
-            scanResultPanel.add(recentScanResult);
+            updateRecentScan();
+            JScrollPane scroll = new JScrollPane(
+                    recentScanResult,
+                    JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+                    JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED
+            );
+            scanResultPanel.add(scroll);
         add(scanResultPanel);
 
         // Add client utility buttons
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setBounds(360, 30 + (HEIGHT - 233), WIDTH - (WIDTH - 420), 170);
         buttonsPanel.setLayout(new GridLayout(2, 3));
-            editProfileButton = new JButton("Edit Profile");
-            buttonsPanel.add(editProfileButton);
+            advancedScanButton = new JButton("Advanced Scan");
+            buttonsPanel.add(advancedScanButton);
             scanHistoryButton = new JButton("Scan History");
             buttonsPanel.add(scanHistoryButton);
             performLastScanButton = new JButton("Perform Last Scan");
             buttonsPanel.add(performLastScanButton);
+            editProfileButton = new JButton("Edit Profile");
+            buttonsPanel.add(editProfileButton);
             userGuideButton = new JButton("User Guide");
             buttonsPanel.add(userGuideButton);
             logoutButton = new JButton("Logout");
             buttonsPanel.add(logoutButton);
         add(buttonsPanel);
+    }
 
+    public static void updateRecentScan() {
+        Connection con = DBHelper.getDatabaseConnection();
+
+        PreparedStatement stmt = null;
+        try {
+            String query = "SELECT * FROM scan_logs WHERE user_uuid = ? ORDER BY id DESC LIMIT 1";
+            stmt = con.prepareStatement(query);
+            stmt.setString(1, user.getUUID().toString());
+            ResultSet results = stmt.executeQuery();
+
+            // While a result exists
+            while(results.next()) {
+                String data = results.getString("data");
+                if(data.equals(""))
+                    recentScanResult.setText("No recent scan found!");
+                else
+                    recentScanResult.setText(data);
+            }
+
+            // Closing up the connection
+            if(stmt != null)
+                stmt.close();
+            if(con != null)
+                con.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
