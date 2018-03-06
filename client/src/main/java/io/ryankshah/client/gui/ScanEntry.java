@@ -5,9 +5,11 @@ import javax.swing.*;
 
 public class ScanEntry
 {
+    protected int id;
     protected String timestamp;
 
-    public ScanEntry(String timestamp) {
+    public ScanEntry(int id, String timestamp) {
+        this.id = id;
         this.timestamp = timestamp;
     }
 

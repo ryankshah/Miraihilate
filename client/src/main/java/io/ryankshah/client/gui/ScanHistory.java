@@ -1,28 +1,27 @@
 package io.ryankshah.client.gui;
 
-import io.ryankshah.util.resource.ResourceLoader;
+import io.ryankshah.Client;
+import io.ryankshah.util.database.DBHelper;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ScanHistory extends JFrame
 {
-    private ScanEntry entries[] = {
-            new ScanEntry("2017-8-2 10:21:03"),
-            new ScanEntry("2017-8-2 10:21:03"),
-            new ScanEntry("2017-8-2 10:21:03"),
-            new ScanEntry("2017-8-2 10:21:03"),
-            new ScanEntry("2017-8-2 10:21:03"),
-            new ScanEntry("2017-8-2 10:21:03"),
-            new ScanEntry("2017-8-2 10:21:03")
-    };
+    private ScanEntry entries[];
     private JList entryList;
     private JTextArea scanResult;
 
     public ScanHistory() {
-        entryList = new JList(entries);
         setTitle("Scan History");
         setSize(new Dimension(600, 400));
 
@@ -34,6 +33,15 @@ public class ScanHistory extends JFrame
         TitledBorder resultListBorder = BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Recent Scan");
         resultListPanel.setBorder(resultListBorder);
         resultListPanel.setLayout(new GridLayout(1, 2));
+
+        ArrayList<ScanEntry> seList = getResultIDList();
+        entries = new ScanEntry[seList.size()];
+        int i = 0;
+        for(ScanEntry e : seList) {
+            entries[i] = e;
+        }
+        System.out.println(Arrays.toString(entries));
+
         entryList = new JList(entries);
         entryList.setCellRenderer(new ScanEntryRenderer());
         entryList.setVisibleRowCount(4);
@@ -59,5 +67,38 @@ public class ScanHistory extends JFrame
 
         setLocationRelativeTo(null);
         setResizable(false);
+    }
+
+    public ArrayList<ScanEntry> getResultIDList() {
+        Connection con = DBHelper.getDatabaseConnection();
+        PreparedStatement stmt = null;
+        ArrayList<ScanEntry> resultList = new ArrayList<>();
+        try {
+            String query = "SELECT id, start_timestamp FROM scan_logs WHERE user_uuid = ?";
+            stmt = con.prepareStatement(query);
+            stmt.setString(1, Client.user.getUUID().toString());
+            ResultSet results = stmt.executeQuery();
+
+            // While a result exists
+            while(results.next()) {
+                int scanID = results.getInt("id");
+                String startTimestamp = results.getString("start_timestamp");
+                resultList.add(new ScanEntry(scanID, startTimestamp));
+            }
+
+            // Closing up the connection
+            if(stmt != null)
+                stmt.close();
+            if(con != null)
+                con.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultList;
+    }
+
+    public void retrieveScanResult() {
+
     }
 }
