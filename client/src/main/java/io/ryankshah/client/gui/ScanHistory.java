@@ -1,6 +1,7 @@
 package io.ryankshah.client.gui;
 
 import io.ryankshah.Client;
+import io.ryankshah.client.event.ScanEntryListener;
 import io.ryankshah.util.database.DBHelper;
 
 import javax.swing.*;
@@ -13,13 +14,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class ScanHistory extends JFrame
 {
     private ScanEntry entries[];
     private JList entryList;
-    private JTextArea scanResult;
+    public static JTextArea scanResult;
+    private ListSelectionModel listSelectionModel;
 
     public ScanHistory() {
         setTitle("Scan History");
@@ -45,6 +46,8 @@ public class ScanHistory extends JFrame
         entryList = new JList(entries);
         entryList.setCellRenderer(new ScanEntryRenderer());
         entryList.setVisibleRowCount(4);
+        listSelectionModel = entryList.getSelectionModel();
+        entryList.addListSelectionListener(new ScanEntryListener());
         JScrollPane pane = new JScrollPane(entryList);
         resultListPanel.add(pane);
         add(resultListPanel);
@@ -66,7 +69,6 @@ public class ScanHistory extends JFrame
         add(resultViewPanel);
 
         setLocationRelativeTo(null);
-        setResizable(false);
     }
 
     public ArrayList<ScanEntry> getResultIDList() {

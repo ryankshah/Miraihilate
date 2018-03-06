@@ -13,6 +13,10 @@ public class ScanEntry
         this.timestamp = timestamp;
     }
 
+    public int getID() {
+        return id;
+    }
+
     public ImageIcon getIcon() {
         return ResourceLoader.getImageIconResource("disabled_icon.png");
     }

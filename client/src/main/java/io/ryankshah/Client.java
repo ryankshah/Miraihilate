@@ -117,8 +117,8 @@ public class Client extends JFrame
 
     public static void updateRecentScan() {
         Connection con = DBHelper.getDatabaseConnection();
-
         PreparedStatement stmt = null;
+
         try {
             String query = "SELECT * FROM scan_logs WHERE user_uuid = ? ORDER BY id DESC LIMIT 1";
             stmt = con.prepareStatement(query);
