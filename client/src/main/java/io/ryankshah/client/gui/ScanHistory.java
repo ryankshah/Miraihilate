@@ -38,7 +38,7 @@ public class ScanHistory extends JFrame
         entries = new ScanEntry[seList.size()];
         int i = 0;
         for(ScanEntry e : seList) {
-            entries[i] = e;
+            entries[i++] = e;
         }
         System.out.println(Arrays.toString(entries));
 
