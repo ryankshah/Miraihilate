@@ -1,6 +1,7 @@
 package io.ryankshah.client.event;
 
 import io.ryankshah.Client;
+import io.ryankshah.client.gui.AdvancedScan;
 import io.ryankshah.client.gui.QuickScanPanel;
 import io.ryankshah.client.gui.ScanHistory;
 import io.ryankshah.util.resource.ResourceLoader;
@@ -18,13 +19,14 @@ public class ClientActionHandler implements ActionListener
         if(e.getSource() == QuickScanPanel.quickScanButton) {
             int cp = QuickScanPanel.changePasswordBox.isSelected() ? 1 : 0;
             int nd = QuickScanPanel.notifyDeviceBox.isSelected() ? 1 : 0;
-            boolean result = ScriptExecutor.executePythonScriptWithArgs(ResourceLoader.getScriptResource("quick.py"),
-                    Client.user.getUUID().toString() + " " +
-                            QuickScanPanel.ipAddressField.getText() + " " + QuickScanPanel.cidrField.getText() +
-                            " " + cp + " " + nd
-            );
+            String options = Client.user.getUUID().toString() + " " +
+                    QuickScanPanel.ipAddressField.getText() + " " + QuickScanPanel.cidrField.getText() +
+                    " " + cp + " " + nd;
+            boolean result = ScriptExecutor.executePythonScriptWithArgs(ResourceLoader.getScriptResource("quick.py"), options);
             if(result) {
+                Client.recentScanOptions = options;
                 Client.updateRecentScan();
+                JOptionPane.showMessageDialog(Client.INSTANCE, "Scan completed successfully!", "Info", JOptionPane.PLAIN_MESSAGE);
             }
         }
 
@@ -44,14 +46,41 @@ public class ClientActionHandler implements ActionListener
             JOptionPane.showMessageDialog(Client.INSTANCE, label, "Quick Scan Help", JOptionPane.PLAIN_MESSAGE);
         }
 
+        if(e.getSource() == Client.advancedScanButton) {
+            new AdvancedScan().setVisible(true);
+        }
+
         if(e.getSource() == Client.scanHistoryButton) {
             new ScanHistory().setVisible(true);
         }
 
+        if(e.getSource() == Client.performLastScanButton) {
+            if (Client.recentScanOptions.equals("")) {
+                JOptionPane.showMessageDialog(Client.INSTANCE, "No scans were performed since you were logged in", "Info", JOptionPane.PLAIN_MESSAGE);
+            } else {
+                boolean result = ScriptExecutor.executePythonScriptWithArgs(ResourceLoader.getScriptResource("quick.py"), Client.recentScanOptions);
+                if (result) {
+                    Client.updateRecentScan();
+                    JOptionPane.showMessageDialog(Client.INSTANCE, "Scan completed successfully!", "Info", JOptionPane.PLAIN_MESSAGE);
+                }
+            }
+        }
+
+        if(e.getSource() == Client.editProfileButton) {
+            // TODO: Show edit profile window
+            System.out.println("Show edit profile window");
+        }
+
+        if(e.getSource() == Client.userGuideButton) {
+            // TODO: Open user guide
+        }
+
         // Logout
         if(e.getSource() == Client.logoutButton) {
-            // TODO: If scan is running, cancel the logout?
-            System.exit(0);
+            int result = JOptionPane.showConfirmDialog(Client.INSTANCE, "Are you sure you want to logout?", "Qutting Miraihilate?", JOptionPane.YES_NO_OPTION);
+            if(result == JOptionPane.YES_OPTION) {
+                System.exit(0);
+            }
         }
     }
 }

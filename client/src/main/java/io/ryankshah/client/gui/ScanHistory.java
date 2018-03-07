@@ -99,8 +99,4 @@ public class ScanHistory extends JFrame
         }
         return resultList;
     }
-
-    public void retrieveScanResult() {
-
-    }
 }

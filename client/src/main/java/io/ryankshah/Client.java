@@ -32,7 +32,10 @@ public class Client extends JFrame
     public static Client INSTANCE;
     private ActionListener clientActionListener;
 
+    public static String recentScanOptions;
+
     public Client(User user) {
+        this.recentScanOptions = "";
         this.user = user;
         this.INSTANCE= this;
         this.clientActionListener = new ClientActionHandler();
