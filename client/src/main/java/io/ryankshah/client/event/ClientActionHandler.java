@@ -39,6 +39,7 @@ public class ClientActionHandler implements ActionListener
             sb.append("<ol><li><strong>SSH</strong> - SSH is a protocol for operating network services over an unsecured network</li> <li><strong>Telnet</strong> - Telnet scanning is currently not available</li></ol><br /><br />");
             sb.append("<strong>Change Password</strong><br /><p>Choose this if the device's password should be changed (recommended)</p><br /><br />");
             sb.append("<strong>Notify Device</strong><br /><p>Choose this if the device should be notified of the vulnerability (recommended)</p><br /><br />");
+            sb.append("</html>");
 
             JLabel label = new JLabel(sb.toString());
             label.setFont(new Font("dialoginput", Font.PLAIN, 14));

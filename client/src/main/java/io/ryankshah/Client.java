@@ -37,8 +37,8 @@ public class Client extends JFrame
     public Client(User user) {
         this.recentScanOptions = "";
         this.user = user;
-        this.INSTANCE= this;
-        this.clientActionListener = new ClientActionHandler();
+        INSTANCE= this;
+        clientActionListener = new ClientActionHandler();
 
         setTitle("Miraihilate Client " + VERSION);
         setSize(new Dimension(WIDTH, HEIGHT));

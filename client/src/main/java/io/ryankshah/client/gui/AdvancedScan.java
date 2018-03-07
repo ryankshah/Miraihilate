@@ -1,11 +1,14 @@
 package io.ryankshah.client.gui;
 
+import io.ryankshah.client.event.AdvancedScanHandler;
 import io.ryankshah.util.gui.TextPrompt;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class AdvancedScan extends JFrame
 {
@@ -18,13 +21,18 @@ public class AdvancedScan extends JFrame
 
     public static JButton advancedScanButton, helpButton;
 
+    public static AdvancedScan INSTANCE;
+    private AdvancedScanHandler asHandler;
+
     public AdvancedScan() {
+        INSTANCE= this;
+        asHandler = new AdvancedScanHandler();
+
         setTitle("Advanced Scan");
         setSize(new Dimension(400, 500));
 
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLayout(new GridLayout(3, 1, 0, 15));
-        setResizable(false);
 
         //====== Scan Details Panel ======\\
 
@@ -105,21 +113,35 @@ public class AdvancedScan extends JFrame
 
         executeMoreCommandsBox = new JCheckBox("Execute more commands?");
         executeMoreCommandsBox.setToolTipText("Option to send extra commands to a vulnerable device, if detected");
+        executeMoreCommandsBox.addItemListener(new ItemListener() {
+            public void itemStateChanged(ItemEvent e) {
+                if(executeMoreCommandsBox.isSelected()) {
+                    commandsBox.setEnabled(true);
+                    commandsBox.setBackground(Color.white);
+                } else {
+                    commandsBox.setEnabled(false);
+                    commandsBox.setBackground(Color.decode("#EDEDED"));
+                }
+            }
+        });
         panel.add(executeMoreCommandsBox);
 
         commandsBox = new JTextArea();
         commandsBox.setToolTipText("Enter your commands here, each on a new line");
         commandsBox.setEnabled(false);
         commandsBox.setRows(5);
+        commandsBox.setBackground(Color.decode("#EDEDED"));
+        // TODO: Maybe add scrollbox to this?
         panel.add(commandsBox);
-        TextPrompt commandsPlaceholder = new TextPrompt("Enter your commands, each on a new line", commandsBox);
     }
 
     private void addButtons(JPanel panel) {
         advancedScanButton = new JButton("Perform Advanced Scan");
+        advancedScanButton.addActionListener(asHandler);
         panel.add(advancedScanButton);
 
         helpButton = new JButton("Help");
+        helpButton.addActionListener(asHandler);
         panel.add(helpButton);
     }
 }
