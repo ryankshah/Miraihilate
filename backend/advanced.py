@@ -61,27 +61,33 @@ def scan_ssh(address, cidr, cp, nd, to, cmds):
     iprange = IPNetwork(address + '/' + cidr)
     vulnerable_count = 0
 
-    # TODO: Write intro to the log with advanced scan specification
+    log.append('Advanced scan on network: ' + address + '/' + cidr + ' at ' + start_timestamp)
+    log.append('')
 
-    '''if cp == 0:
+    log.append('Advanced Scan Specification')
+    log.append('')
+    log.append('Scanning Mode: SSH')
+    log.append('IP address range: ' + str(iprange[0]) + ' - ' + str(iprange[-1]))
+
+    if cp == '0':
         log.append('Changing device passwords? - No')
     else:
         log.append('Changing device passwords? - Yes')
 
-    if nd == 0:
+    if nd == '0':
         log.append('Notify device about vulnerability? - No')
     else:
-        log.append('Notify device about vulnerability? - Yes')'''
+        log.append('Notify device about vulnerability? - Yes')
+
+	# TODO: Check if timeout or extra parameters are set
 
     log.append('')
-    results_title = 'Scan Results'
-    log.append(results_title)
-    log.append('=' * len(results_title))
+    log.append('Scan Results')
     log.append('')
 
     # Loop through ip addresses in the network range specified
     for ip in iprange:
-        log.append('Trying SSH for IP "' + str(ip) + '" ...')
+        log.append('Trying SSH for IP ' + str(ip) + ' ...')
 
         for acc in IOT_ROOT_USER_COMBINATIONS:
             try:
@@ -105,7 +111,7 @@ def scan_ssh(address, cidr, cp, nd, to, cmds):
 
                 # Check if notify device option was checked
                 # TODO: Fix notifying device
-                if nd == 1:
+                if nd == '1':
                     device.exec_command("notify-send 'Miraihilate Alert!' 'A vulnerability has been detected in your device, which has been linked with Mirai malware.'")
                     log.append('  - The device was alerted about the vulnerability.')
                 else:
@@ -124,5 +130,5 @@ def scan_ssh(address, cidr, cp, nd, to, cmds):
             except (SSHException, BadHostKeyException, Exception):
                 log.append('  - Could not connect to device via SSH!')
                 break
-	
+
     return []

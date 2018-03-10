@@ -17,11 +17,11 @@ IOT_ROOT_USER_COMBINATIONS = ('admin1', 'password'), ('root', 'xc3511'), ('root'
 def log_to_db(uuid, data, start_timestamp, end_timestamp):
     try:
         config = {
-          'user': 'root',
-          'password': 'root',
-          'host': 'localhost',
-          'database': 'miraihilate',
-          'port': 8889 # MAMP MySQL port
+            'user': 'root',
+            'password': 'root',
+            'host': 'localhost',
+            'database': 'miraihilate',
+            'port': 8889 # MAMP MySQL port
         }
 
         conn = mysql.connector.connect(**config)
@@ -59,32 +59,26 @@ def scan_ssh(address, cidr, cp, nd):
     iprange = IPNetwork(address + '/' + cidr)
     vulnerable_count = 0
 
-    log_title = 'Miraihilate is starting SSH scan on network: ' + address + '/' + cidr
-    log.append(log_title)
-    log.append('=' * len(log_title))
+    log.append('Quick scan on network: ' + address + '/' + cidr)
     log.append('')
 
-    scan_spec_title = 'SSH Scan Specification'
-    log.append(scan_spec_title)
-    log.append('=' * len(scan_spec_title))
+    log.append('Quick Scan Specification')
     log.append('')
     log.append('Scanning Mode: SSH')
     log.append('IP address range: ' + str(iprange[0]) + ' - ' + str(iprange[-1]))
 
-    if cp == 0:
+    if cp == '0':
         log.append('Changing device passwords? - No')
     else:
         log.append('Changing device passwords? - Yes')
 
-    if nd == 0:
+    if nd == '0':
         log.append('Notify device about vulnerability? - No')
     else:
         log.append('Notify device about vulnerability? - Yes')
 
     log.append('')
-    results_title = 'Scan Results'
-    log.append(results_title)
-    log.append('=' * len(results_title))
+    log.append('Scan Results')
     log.append('')
 
     # Loop through ip addresses in the network range specified
@@ -113,7 +107,7 @@ def scan_ssh(address, cidr, cp, nd):
 
                 # Check if notify device option was checked
                 # TODO: Fix notifying device
-                if nd == 1:
+                if nd == '1':
                     device.exec_command("notify-send 'Miraihilate Alert!' 'A vulnerability has been detected in your device, which has been linked with Mirai malware.'")
                     log.append('  - The device was alerted about the vulnerability.')
                 else:
@@ -153,6 +147,8 @@ cp = sys.argv[4]
 nd = sys.argv[5]
 
 # Prepare other variables for insertion into log database
+print(cp, type(cp))
+print(nd, type(nd))
 scan = scan_ssh(ip, cidr, cp, nd) # [0] = start timestamp, [1] = scan log
 end_timestamp = datetime.now()
 
