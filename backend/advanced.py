@@ -5,10 +5,11 @@ from datetime import datetime
 from mysql.connector import Error
 import mysql.connector
 import paramiko
-import socket
 import json
 import time
 import sys
+import random
+import string
 
 BRUTEFORCE_TIMEOUT = 3
 # A list of root account username/password combinations for IoT devices

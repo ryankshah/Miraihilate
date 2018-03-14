@@ -35,7 +35,7 @@ public class ScanEntryListener implements ListSelectionListener
 
             // While a result exists
             while(results.next()) {
-                ScanHistory.scanResult.setText(results.getString("data"));
+                ScanHistory.scanResult.setText(results.getString("data").replaceAll("\\\\", ""));
             }
 
             // Closing up the connection

@@ -5,10 +5,12 @@ from datetime import datetime
 from mysql.connector import Error
 import mysql.connector
 import paramiko
-import socket
 import json
 import time
 import sys
+import random
+import string
+import re
 
 BRUTEFORCE_TIMEOUT = 3
 # A list of root account username/password combinations for IoT devices
@@ -38,6 +40,17 @@ def log_to_db(uuid, data, start_timestamp, end_timestamp):
     except Error as e:
         print(e)
 
+def gen_secure_pwd():
+    pwd = gen_pwd()
+    while (not any(c.isupper() for c in pwd)):
+        pwd = gen_pwd()
+    return pwd
+
+def gen_pwd():
+    alphabet = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(random.SystemRandom().choice(characters) for c in range(16))
+
+
 # SSH Scanning Function
 # ======================
 # Arguments
@@ -54,36 +67,37 @@ def log_to_db(uuid, data, start_timestamp, end_timestamp):
 #
 # TODO: Fix request timeout errors
 def scan_ssh(address, cidr, cp, nd):
-    start_timestamp = datetime.now()
+    start_timestamp = datetime.now().strftime('%d %b %Y at %X')
     log = []
     iprange = IPNetwork(address + '/' + cidr)
     vulnerable_count = 0
 
-    log.append('Quick scan on network: ' + address + '/' + cidr)
-    log.append('')
+    log.append('<html>')
+    log.append('<h1>Quick scan on network: ' + address + '/' + cidr + '</h1><br />')
 
-    log.append('Quick Scan Specification')
-    log.append('')
-    log.append('Scanning Mode: SSH')
-    log.append('IP address range: ' + str(iprange[0]) + ' - ' + str(iprange[-1]))
+    log.append('<b>Quick Scan Specification</b><br />')
+    log.append('<br /><br />')
+    log.append('Start Time: ' + start_timestamp + '<br />')
+    log.append('Scanning Mode: SSH<br />')
+    log.append('IP address range: ' + str(iprange[0]) + ' - ' + str(iprange[-1]) + '<br />')
 
     if cp == '0':
         log.append('Changing device passwords? - No')
     else:
-        log.append('Changing device passwords? - Yes')
+        log.append('Changing device passwords? - Yes<br />')
 
     if nd == '0':
-        log.append('Notify device about vulnerability? - No')
+        log.append('Notify device about vulnerability? - No<br />')
     else:
-        log.append('Notify device about vulnerability? - Yes')
+        log.append('Notify device about vulnerability? - Yes<br />')
 
-    log.append('')
-    log.append('Scan Results')
-    log.append('')
+    log.append('<br /><br />')
+    log.append('<b>Scan Results</b><br />')
+    log.append('<br /><br />')
 
     # Loop through ip addresses in the network range specified
     for ip in iprange:
-        log.append('Trying SSH for IP "' + str(ip) + '" ...')
+        log.append('Trying SSH for IP "' + str(ip) + '" ...<br />')
 
         for acc in IOT_ROOT_USER_COMBINATIONS:
             try:
@@ -102,42 +116,56 @@ def scan_ssh(address, cidr, cp, nd):
                 # Port 2281 is used for VM testing (actual SSH port is 22)
                 device.connect(str(ip), username=acc[0], password=acc[1], port=2281, timeout=BRUTEFORCE_TIMEOUT)
 
-                log.append('  - This device is vulnerable!')
+                # Connected to device so it is vulnerable
+                # If it was not vulnerable the exception would be raised
+                log.append('  - This device is vulnerable!<br />')
                 vulnerable_count += 1
 
                 # Check if notify device option was checked
-                # TODO: Fix notifying device
                 if nd == '1':
                     device.exec_command("notify-send 'Miraihilate Alert!' 'A vulnerability has been detected in your device, which has been linked with Mirai malware.'")
-                    log.append('  - The device was alerted about the vulnerability.')
+                    log.append('  - The device was alerted about the vulnerability.<br />')
                 else:
-                    log.append('  - This device was not alerted about the vulnerability.')
+                    log.append('  - This device was not alerted about the vulnerability.<br />')
 
-                # TODO: Check if user want's to change device password `cp`
+                # Check if change password option was checked
+                if cp == '1':
+                    pwd = gen_secure_pwd()
+                    log.append(' - Changing password...<br />')
+                    # Change password
+                    device.exec_command('echo "' + str(tuples[0]) + ':' + newPassword + '" | chpasswd')
+                    log.append(' - Forcing device to reboot...<br />')
+                    # Force device reboot
+                    device.exec_command('reboot now')
+                    log.append(' - This device\'s password was changed.<br />')
+                else:
+                    log.append(' - This device\'s password was not changed.<br />')
 
                 # Close the SSHClient and its underlying Transport
+                log.append('  - Closing device...<br />')
                 device.close()
-
-                log.append('  - Closing device...')
 
                 break
             except AuthenticationException:
                 continue
             except (SSHException, BadHostKeyException, Exception):
-                log.append('  - Could not connect to device via SSH!')
+                log.append('  - Could not connect to device via SSH!<br />')
                 break
 
-    log.append('')
+    log.append('<br /><br />')
     if vulnerable_count == 0:
-        log.append('No vulnerable devices were found during this scan!')
+        log.append('No vulnerable devices were found during this scan!<br />')
     elif vulnerable_count == 1:
-        log.append(str(vulnerable_count) + ' vulnerable device was found!')
+        log.append(str(vulnerable_count) + ' vulnerable device was found!<br />')
     else:
-        log.append(str(vulnerable_count) + ' vulnerable devices were found!')
+        log.append(str(vulnerable_count) + ' vulnerable devices were found!<br />')
+
+    # Finish log
+    log.append('</html>')
 
     # Return the vulnerable list and JSON output
     # or if nothing was found then return empty JSON
-    return (start_timestamp, json.dumps(log, indent=4))
+    return (start_timestamp, re.escape('\n'.join(log)))
 
 
 uuid = sys.argv[1]
@@ -150,7 +178,7 @@ nd = sys.argv[5]
 print(cp, type(cp))
 print(nd, type(nd))
 scan = scan_ssh(ip, cidr, cp, nd) # [0] = start timestamp, [1] = scan log
-end_timestamp = datetime.now()
+end_timestamp = datetime.now().strftime('%d %b %Y at %X')
 
 log_to_db(uuid, scan[1], scan[0], end_timestamp)
 

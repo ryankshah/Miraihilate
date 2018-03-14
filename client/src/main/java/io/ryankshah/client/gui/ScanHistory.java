@@ -7,19 +7,19 @@ import io.ryankshah.util.database.DBHelper;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.text.html.HTMLDocument;
 import java.awt.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ScanHistory extends JFrame
 {
     private ScanEntry entries[];
     private JList entryList;
-    public static JTextArea scanResult;
+    public static JEditorPane scanResult;
     private ListSelectionModel listSelectionModel;
 
     public ScanHistory() {
@@ -41,7 +41,7 @@ public class ScanHistory extends JFrame
         for(ScanEntry e : seList) {
             entries[i++] = e;
         }
-        System.out.println(Arrays.toString(entries));
+        //System.out.println(Arrays.toString(entries));
 
         entryList = new JList(entries);
         entryList.setCellRenderer(new ScanEntryRenderer());
@@ -57,9 +57,12 @@ public class ScanHistory extends JFrame
         TitledBorder resultViewBorder = BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Result View");
         resultViewPanel.setBorder(resultViewBorder);
         resultViewPanel.setLayout(new GridLayout(1, 2));
-        scanResult = new JTextArea();
+        scanResult = new JEditorPane("text/html", "");
         scanResult.setEditable(false);
-        //updateRecentScan();
+        Font font = new Font("Segoe UI", Font.PLAIN, 14);
+        String bodyRule = "body { font-family: " + font.getFamily() + "; " +
+                "font-size: " + font.getSize() + "pt; }";
+        ((HTMLDocument)scanResult.getDocument()).getStyleSheet().addRule(bodyRule);
         JScrollPane scroll = new JScrollPane(
                 scanResult,
                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,

@@ -9,6 +9,7 @@ import io.ryankshah.util.resource.ResourceLoader;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.text.html.HTMLDocument;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -27,7 +28,7 @@ public class Client extends JFrame
     public static User user;
 
     public static JButton advancedScanButton, scanHistoryButton, performLastScanButton, editProfileButton, userGuideButton, logoutButton;
-    public static JTextArea recentScanResult;
+    public static JEditorPane recentScanResult;
 
     public static Client INSTANCE;
     private ActionListener clientActionListener;
@@ -82,8 +83,12 @@ public class Client extends JFrame
         scanResultPanel.setBorder(resultBorder);
         scanResultPanel.setBounds(360, 10, WIDTH - (WIDTH - 420), HEIGHT - 233);
         scanResultPanel.setLayout(new GridLayout(1, 2));
-            recentScanResult = new JTextArea();
+            recentScanResult = new JEditorPane("text/html", "");
             recentScanResult.setEditable(false);
+            Font font = new Font("Segoe UI", Font.PLAIN, 14);
+            String bodyRule = "body { font-family: " + font.getFamily() + "; " +
+                    "font-size: " + font.getSize() + "pt; }";
+            ((HTMLDocument)recentScanResult.getDocument()).getStyleSheet().addRule(bodyRule);
             updateRecentScan();
             JScrollPane scroll = new JScrollPane(
                     recentScanResult,
@@ -135,7 +140,7 @@ public class Client extends JFrame
                     recentScanResult.setText("No recent scan found!");
                 } else {
                     //TODO: Parse JSON String to text
-                    recentScanResult.setText(data);
+                    recentScanResult.setText(data.replaceAll("\\\\", ""));
                 }
             }
 
