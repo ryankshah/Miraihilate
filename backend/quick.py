@@ -133,7 +133,7 @@ def scan_ssh(address, cidr, cp, nd):
 					pwd = gen_secure_pwd()
 					log.append(' - Changing password...<br />')
 					# Change password
-					device.exec_command('echo "' + str(tuples[0]) + ':' + newPassword + '" | chpasswd')
+					device.exec_command('echo "' + str(tuples[0]) + ':' + pwd + '" | chpasswd')
 					log.append(' - Forcing device to reboot...<br />')
 					# Force device reboot
 					device.exec_command('reboot now')
