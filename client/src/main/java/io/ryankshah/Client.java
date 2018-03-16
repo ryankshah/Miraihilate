@@ -139,7 +139,6 @@ public class Client extends JFrame
                 if(data.equals("") || data == null) {
                     recentScanResult.setText("No recent scan found!");
                 } else {
-                    //TODO: Parse JSON String to text
                     recentScanResult.setText(data.replaceAll("\\\\", ""));
                 }
             }

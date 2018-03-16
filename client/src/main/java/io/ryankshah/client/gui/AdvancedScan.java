@@ -23,16 +23,18 @@ public class AdvancedScan extends JFrame
 
     public static AdvancedScan INSTANCE;
     private AdvancedScanHandler asHandler;
+    private final int WIDTH = 400, HEIGHT = 600;
 
     public AdvancedScan() {
         INSTANCE= this;
         asHandler = new AdvancedScanHandler();
 
         setTitle("Advanced Scan");
-        setSize(new Dimension(400, 500));
+        setSize(new Dimension(WIDTH, HEIGHT));
 
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setLayout(new GridLayout(3, 1, 0, 15));
+        setResizable(false);
+        setLayout(null);
 
         //====== Scan Details Panel ======\\
 
@@ -40,6 +42,7 @@ public class AdvancedScan extends JFrame
             TitledBorder scanDetailsBorder = BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Scan Details");
             scanDetailsPanel.setBorder(scanDetailsBorder);
             scanDetailsPanel.setLayout(new GridLayout(4, 1));
+            scanDetailsPanel.setBounds(0, 0, WIDTH, 200);
             addScanDetailsComponents(scanDetailsPanel);
         add(scanDetailsPanel);
 
@@ -48,7 +51,8 @@ public class AdvancedScan extends JFrame
         JPanel advancedOptionsPanel = new JPanel();
             TitledBorder advancedOptionsBorder = BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Advanced Options");
             advancedOptionsPanel.setBorder(advancedOptionsBorder);
-            advancedOptionsPanel.setLayout(new GridLayout(3, 1));
+            advancedOptionsPanel.setLayout(null);
+            advancedOptionsPanel.setBounds(0, 210, WIDTH, 300);
             addAdvancedDetailsComponents(advancedOptionsPanel);
         add(advancedOptionsPanel);
 
@@ -56,6 +60,7 @@ public class AdvancedScan extends JFrame
 
         JPanel buttonsPanel = new JPanel();
             buttonsPanel.setLayout(new GridLayout(1, 2));
+            buttonsPanel.setBounds(0, 515, WIDTH, 60);
             addButtons(buttonsPanel);
         add(buttonsPanel);
 
@@ -107,9 +112,10 @@ public class AdvancedScan extends JFrame
 
     private void addAdvancedDetailsComponents(JPanel panel) {
         timeoutField = new JTextField();
-        timeoutField.setToolTipText("Set the SSH timeout of each device being scanned");
+        timeoutField.setToolTipText("Set the bruteforce timeout of each device being scanned");
+        timeoutField.setBounds(5, 20, WIDTH - 10, 50);
         panel.add(timeoutField);
-        TextPrompt timeoutPlaceholder = new TextPrompt("SSH Timeout", timeoutField);
+        TextPrompt timeoutPlaceholder = new TextPrompt("Bruteforce Timeout", timeoutField);
 
         executeMoreCommandsBox = new JCheckBox("Execute more commands?");
         executeMoreCommandsBox.setToolTipText("Option to send extra commands to a vulnerable device, if detected");
@@ -120,18 +126,18 @@ public class AdvancedScan extends JFrame
                     commandsBox.setBackground(Color.white);
                 } else {
                     commandsBox.setEnabled(false);
-                    commandsBox.setBackground(Color.decode("#EDEDED"));
+                    commandsBox.setBackground(Color.decode("#F8F8F8"));
                 }
             }
         });
+        executeMoreCommandsBox.setBounds(5, 80, WIDTH - 10, 30);
         panel.add(executeMoreCommandsBox);
 
         commandsBox = new JTextArea();
         commandsBox.setToolTipText("Enter your commands here, each on a new line");
         commandsBox.setEnabled(false);
-        commandsBox.setRows(5);
-        commandsBox.setBackground(Color.decode("#EDEDED"));
-        // TODO: Maybe add scrollbox to this?
+        commandsBox.setBackground(Color.decode("#F8F8F8"));
+        commandsBox.setBounds(10, 120, WIDTH - 21, 160);
         panel.add(commandsBox);
     }
 

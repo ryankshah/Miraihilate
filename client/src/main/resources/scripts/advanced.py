@@ -12,7 +12,6 @@ import random
 import string
 import re
 
-BRUTEFORCE_TIMEOUT = 3
 # A list of root account username/password combinations for IoT devices
 IOT_ROOT_USER_COMBINATIONS = ('admin1', 'password'), ('root', 'xc3511'), ('root', 'vizxv'), ('root', 'admin'), ('admin', 'admin'), ('root', '888888'), ('root', 'xmhdipc'), ('root', 'default'), ('root', 'juantech'), ('root', '123456'), ('root', '54321'), ('support', 'support'), ('root', ''), ('admin', 'password'), ('root', 'root'), ('root', '12345'), ('user', 'user'), ('admin', '(none)'), ('root', 'pass'), ('admin', 'admin1234'), ('root', '1111'), ('admin', 'smcadmin'), ('admin', '1111'), ('root', '666666'), ('root', 'password'), ('root', '1234'), ('root', 'klv123'), ('Administrator', 'admin'), ('service', 'service'), ('supervisor', 'supervisor'), ('guest', 'guest'), ('guest', '12345'), ('guest', '12345'), ('admin1', 'password'), ('administrator', '1234'), ('666666', '666666'), ('888888', '888888'), ('ubnt', 'ubnt'), ('root', 'klv1234'), ('root', 'Zte521'), ('root', 'hi3518'), ('root', 'jvbzd'), ('root', 'anko'), ('root', 'zlxx.'), ('root', '7ujMko0vizxv'), ('root', '7ujMko0admin'), ('root', 'system'), ('root', 'ikwb'), ('root', 'dreambox'), ('root', 'user'), ('root', 'realtek'), ('root', '00000000'), ('admin', '1111111'), ('admin', '1234'), ('admin', '12345'), ('admin', '54321'), ('admin', '123456'), ('admin', '7ujMko0admin'), ('admin', '1234'), ('admin', 'pass'), ('admin', 'meinsm'), ('tech', 'tech'), ('mother', 'fucker')
 
@@ -66,16 +65,16 @@ def gen_pwd():
 #     an SSH connection
 #
 # TODO: Fix request timeout errors
-def scan_ssh(address, cidr, cp, nd):
+def scan_ssh_adv(address, cidr, cp, nd, tout='3', ec='0'):
     start_timestamp = datetime.now().strftime('%d %b %Y at %X')
     log = []
     iprange = IPNetwork(address + '/' + cidr)
     vulnerable_count = 0
 
     log.append('<html>')
-    log.append('<h1>Quick scan on network: ' + address + '/' + cidr + '</h1><br />')
+    log.append('<h1>Advanced scan on network: ' + address + '/' + cidr + '</h1><br />')
 
-    log.append('<b>Quick Scan Specification</b><br />')
+    log.append('<b>Advanced Scan Specification</b><br />')
     log.append('<br /><br />')
     log.append('Start Time: ' + start_timestamp + '<br />')
     log.append('Scanning Mode: SSH<br />')
@@ -90,6 +89,14 @@ def scan_ssh(address, cidr, cp, nd):
         log.append('Notify device about vulnerability? - No<br />')
     else:
         log.append('Notify device about vulnerability? - Yes<br />')
+
+    log.append('Bruteforce Timeout: ' + tout + '<br />')
+    result = ''
+    if ec == '0':
+        result = 'No'
+    else:
+        result = 'Yes'
+    log.append('Executing extra commands: ' + result + '<br />')
 
     log.append('<br /><b>Scan Results</b><br />')
     log.append('<br /><br />')
@@ -113,7 +120,7 @@ def scan_ssh(address, cidr, cp, nd):
 
                 # Connect to an SSH server and authenticate to it
                 # Port 2281 is used for VM testing (actual SSH port is 22)
-                device.connect(str(ip), username=acc[0], password=acc[1], port=2281, timeout=BRUTEFORCE_TIMEOUT)
+                device.connect(str(ip), username=acc[0], password=acc[1], port=2281, timeout=tout)
 
                 # Connected to device so it is vulnerable
                 # If it was not vulnerable the exception would be raised
@@ -139,6 +146,13 @@ def scan_ssh(address, cidr, cp, nd):
                     log.append(' - This device\'s password was changed.<br />')
                 else:
                     log.append(' - This device\'s password was not changed.<br />')
+
+                if ec == '0':
+                    log.append(' - No extra commands were issued to the device!')
+                else:
+                    # TODO: Parse input string into list
+                    # TODO: Execute commands from list
+                    log.append(' - Commands were performed on this device!')
 
                 # Close the SSHClient and its underlying Transport
                 log.append('  - Closing device...<br />')
@@ -171,9 +185,11 @@ ip = sys.argv[2]
 cidr = sys.argv[3]
 cp = sys.argv[4]
 nd = sys.argv[5]
+tout = sys.argv[6]
+ec = sys.argv[7]
 
 # Prepare other variables for insertion into log database
-scan = scan_ssh(ip, cidr, cp, nd) # [0] = start timestamp, [1] = scan log
+scan = scan_ssh_adv(ip, cidr, cp, nd) # [0] = start timestamp, [1] = scan log
 end_timestamp = datetime.now().strftime('%d %b %Y at %X')
 
 log_to_db(uuid, scan[1], scan[0], end_timestamp)

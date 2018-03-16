@@ -79,10 +79,10 @@ def scan_ssh(address, cidr, cp, nd):
 	log.append('<br /><br />')
 	log.append('Start Time: ' + start_timestamp + '<br />')
 	log.append('Scanning Mode: SSH<br />')
-	log.append('IP address range: ' + str(iprange[0]) + ' - ' + str(iprange[-1]) + '<br />')
+	log.append('IP Address Range: ' + str(iprange[0]) + ' - ' + str(iprange[-1]) + '<br />')
 
 	if cp == '0':
-		log.append('Changing device passwords? - No')
+		log.append('Changing device passwords? - No<br />')
 	else:
 		log.append('Changing device passwords? - Yes<br />')
 
@@ -91,8 +91,7 @@ def scan_ssh(address, cidr, cp, nd):
 	else:
 		log.append('Notify device about vulnerability? - Yes<br />')
 
-	log.append('<br /><br />')
-	log.append('<b>Scan Results</b><br />')
+	log.append('<br /><b>Scan Results</b><br />')
 	log.append('<br /><br />')
 
 	# Loop through ip addresses in the network range specified
@@ -133,7 +132,7 @@ def scan_ssh(address, cidr, cp, nd):
 					pwd = gen_secure_pwd()
 					log.append(' - Changing password...<br />')
 					# Change password
-					device.exec_command('echo "' + str(tuples[0]) + ':' + pwd + '" | chpasswd')
+					device.exec_command('echo "' + str(acc[0]) + ':' + pwd + '" | chpasswd')
 					log.append(' - Forcing device to reboot...<br />')
 					# Force device reboot
 					device.exec_command('reboot now')
@@ -163,8 +162,7 @@ def scan_ssh(address, cidr, cp, nd):
 	# Finish log
 	log.append('<br /></html>')
 
-	# Return the vulnerable list and JSON output
-	# or if nothing was found then return empty JSON
+	# Return the vulnerable list and pretty html output
 	return (start_timestamp, re.escape('\n'.join(log)))
 
 
@@ -175,8 +173,6 @@ cp = sys.argv[4]
 nd = sys.argv[5]
 
 # Prepare other variables for insertion into log database
-print(cp, type(cp))
-print(nd, type(nd))
 scan = scan_ssh(ip, cidr, cp, nd) # [0] = start timestamp, [1] = scan log
 end_timestamp = datetime.now().strftime('%d %b %Y at %X')
 
