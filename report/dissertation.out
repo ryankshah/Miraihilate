@@ -1,0 +1,66 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Aims and Objectives}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Aims}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Objectives}{section.1.1}% 4
+\BOOKMARK [0][-]{chapter.2}{Background}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Internet of Things}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Botnets}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.1}{Botnet Architectures}{section.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.2}{Classification}{section.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.3}{Infection Vectors}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.4}{Threats Surrounding Botnets}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.5}{Previous Botnet Threats}{section.2.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.6}{Detection and Prevention}{section.2.2}% 13
+\BOOKMARK [1][-]{section.2.3}{Denial of Service}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.3.1}{Distributed Denial of Service}{section.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.3.2}{Network Types}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.3}{Motives}{section.2.3}% 17
+\BOOKMARK [2][-]{subsection.2.3.4}{Attack Vectors}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.5}{Prevention and Mitigation}{section.2.3}% 19
+\BOOKMARK [1][-]{section.2.4}{IoT Devices and Botnets}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.4.1}{Vulnerability}{section.2.4}% 21
+\BOOKMARK [1][-]{section.2.5}{IoT Botnets}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.5.1}{Are they more of a threat?}{section.2.5}% 23
+\BOOKMARK [2][-]{subsection.2.5.2}{Mirai}{section.2.5}% 24
+\BOOKMARK [2][-]{subsection.2.5.3}{Infection}{section.2.5}% 25
+\BOOKMARK [2][-]{subsection.2.5.4}{Prevention and Mitigation}{section.2.5}% 26
+\BOOKMARK [1][-]{section.2.6}{Summary}{chapter.2}% 27
+\BOOKMARK [0][-]{chapter.3}{Program Design}{}% 28
+\BOOKMARK [1][-]{section.3.1}{System Structure}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.1.1}{User Access Control}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.2}{Log System}{section.3.1}% 31
+\BOOKMARK [2][-]{subsection.3.1.3}{Database Structure}{section.3.1}% 32
+\BOOKMARK [1][-]{section.3.2}{Interface Decisions}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.2.1}{Mockup Design}{section.3.2}% 34
+\BOOKMARK [2][-]{subsection.3.2.2}{Pre-Implementation}{section.3.2}% 35
+\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Sofware Decisions}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.1.1}{Platform and Portability}{section.4.1}% 38
+\BOOKMARK [2][-]{subsection.4.1.2}{Programming Languages}{section.4.1}% 39
+\BOOKMARK [1][-]{section.4.2}{Development Environment}{chapter.4}% 40
+\BOOKMARK [2][-]{subsection.4.2.1}{Python Environment}{section.4.2}% 41
+\BOOKMARK [2][-]{subsection.4.2.2}{Java Environment}{section.4.2}% 42
+\BOOKMARK [1][-]{section.4.3}{Setup Utility}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.4}{Backend Development}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.1}{Backend Structure}{section.4.4}% 45
+\BOOKMARK [2][-]{subsection.4.4.2}{Logging}{section.4.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.3}{Scanning}{section.4.4}% 47
+\BOOKMARK [1][-]{section.4.5}{Client Development}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.5.1}{Quick Scanning}{section.4.5}% 49
+\BOOKMARK [2][-]{subsection.4.5.2}{Viewing Scan Logs}{section.4.5}% 50
+\BOOKMARK [2][-]{subsection.4.5.3}{Advanced Scanning}{section.4.5}% 51
+\BOOKMARK [0][-]{chapter.5}{Usability Evaluation}{}% 52
+\BOOKMARK [1][-]{section.5.1}{Recruitment}{chapter.5}% 53
+\BOOKMARK [1][-]{section.5.2}{Conducting the Study}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.3}{Results Analysis}{chapter.5}% 55
+\BOOKMARK [0][-]{chapter*.24}{References}{}% 56
+\BOOKMARK [0][-]{Appendix.a.A}{Appendix Mockup Design Appendix}{}% 57
+\BOOKMARK [1][-]{section.a.A.1}{Mockup Design Consent Form}{Appendix.a.A}% 58
+\BOOKMARK [1][-]{section.a.A.2}{Client Interface Feedback Questionnaire}{Appendix.a.A}% 59
+\BOOKMARK [1][-]{section.a.A.3}{Advanced Scan Feedback Questionnaire}{Appendix.a.A}% 60
+\BOOKMARK [1][-]{section.a.A.4}{Scan History Feedback Questionnaire}{Appendix.a.A}% 61
+\BOOKMARK [0][-]{Appendix.a.B}{Appendix Implementation Appendix}{}% 62
+\BOOKMARK [1][-]{section.a.B.1}{Example SSH Scan Log}{Appendix.a.B}% 63
+\BOOKMARK [0][-]{Appendix.a.C}{Appendix Usability Evaluation Appendix}{}% 64
+\BOOKMARK [1][-]{section.a.C.1}{Pre-Study Question Sheet}{Appendix.a.C}% 65
+\BOOKMARK [1][-]{section.a.C.2}{Usability Study Consent Form}{Appendix.a.C}% 66

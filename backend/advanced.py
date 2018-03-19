@@ -57,12 +57,13 @@ def gen_pwd():
 #   - cidr: CIDR prefix to specify address range
 #   - cp: Change password on device and notify of change?
 #   - nd: Notify device of vulnerability?
+#   - tout: Connection timeout (default = 3)
+#   - ec: Extra commands ('0' or a list of commands in a string)
 #
 # Description
 #   - Scans a specified network range and attempts to bruteforce into
-#     the root accounts found on the IP addresses found using the default
-#     list of username/password combinations defined as `passwords`, using
-#     an SSH connection
+#     device root accounts found on the IP address range, using a default
+#     list of username/password combinations through an SSH connection.
 #
 # TODO: Fix request timeout errors
 def scan_ssh_adv(address, cidr, cp, nd, tout='3', ec='0'):

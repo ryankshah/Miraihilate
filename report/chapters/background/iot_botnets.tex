@@ -1,0 +1,37 @@
+Compared to a traditional botnet, an IoT botnet is comprised of hacked computers, smart appliances and other IoT devices co-opted for illegal purposes. Bots in an IoT botnet have been coined the term \textit{thingbot}\textsuperscript{\cite{thingbots}}, to refer to devices other than computers that have been compromised.
+
+\subsection{Are they more of a threat?}
+
+The attack vectors and motives of an IoT botnet are not considered more of a threat than a regular botnet, but because of the vast number of vulnerable IoT devices available to be exploited, an IoT botnet has the potential to be become a much larger threat than a regular one.
+By 2016, the number of IoT devices attached to the Internet was nearly double the number of users on the Internet itself, demonstrating a rapid influx of IoT devices. IoT botnets have also introduced the Internet to 1TBps DDoS attacks.
+
+\vspace{0.5cm}
+
+As well as this, because a lot of IoT devices do not directly interface with its end-user(s), it can be extremely hard to detect whether or not a device has been compromised. Therefore, it makes it harder to detect an IoT botnet while its not performing a task. Most IoT malware also resides in the device's temporary memory (RAM) and do not use reflection or amplification techniques to launch attacks, making it much more difficult to recognize and mitigate IoT botnet DDoS attacks\textsuperscript{\cite{angrishi2017turning}}.
+
+\subsection{Mirai}
+
+Mirai is IoT botnet malware that was responsible for taking down security journalist, Brian Kreb's website in September 2016, as well as Dyn\textsuperscript{\cite{aprilunderstanding}}. The magnitude of the attack, being one of the largest ever recorded, made Mirai a high-profile botnet malware.
+
+Although it is not the first, or only IoT botnet, it is the first open-source IoT botnet after its source code was leaked on Github. It's command and control code is written in the language Go, while its bot malware is coded in C. Like most botnets, Mirai was built for two core purposes\textsuperscript{\cite{incapsulamirai}}:
+\begin{itemize}
+	\item{Locate and compromise IoT devices to increase the capacity of the botnet}
+	\item{Launch DDoS attacks based on instructions received from its remote command and control center}
+\end{itemize}
+
+\subsection{Infection}
+
+Mirai malware is initially spread by first entering a rapid scanning phase, where it asynchronously sends requests to pseudorandom IPv4 addresses on Telnet TCP ports. It had a hardcoded blacklist of IP addresses to avoid, such as the US Department of Defense, to further obfuscate its existence\textsuperscript{\cite{aprilunderstanding}}.
+
+The purpose of this scanning phase is to locate vulnerable IoT devices that could be remotely accessed by simple passwords, usually factory-default usernames and passwords. Mirai uses a brute-force technique for guessing passwords, such as \textit{admin/admin}, based on a predefined list. Some strains of Mirai have also been shown to self-propagate the malware, where infected bots will also perform scanning and infection.
+
+\subsection{Prevention and Mitigation}
+
+The prevention and mitigation procedures are the same as a regular botnet, however due to the diversity and higher capacities of IoT botnets such as Mirai, tools must evolve to become more specific. Several programs have already been released to scan a device to check for a vulnerability to Mirai, such as the Mirai Scanner by Incapsula\textsuperscript{\cite{incapsulascanner}}. Although these programs address general Mirai vulnerabilities, they do not attempt to fully address the \textit{future} strains of Mirai.
+
+\section{Summary}
+Overall, it can be seen in comparison to IoT botnets that a regular botnet can be exactly as damaging. However through research it is clear that, due to the large current size of IoT and the prediction of the increase in IoT devices in upcoming years, that the possible capacity of an IoT botnet such as Mirai will supercede the capacities of botnets in the past. This suggests that with the influx of larger quantities of resources available to a botnet, attacks will undoubtedly become much more powerful and \textit{effectively} unstoppable.
+
+\vspace{0.5cm}
+
+Ultimately, the program I shall develop will focus on the primary functions of all strains of Mirai malware, and attempt to prevent and mitigate the primary infection vectors Mirai uses. The program will have the ability to warn devices and/or modify the default user/password vulnerability, whilst possible adding a security policy to limit remote address access to the devices to local networks.

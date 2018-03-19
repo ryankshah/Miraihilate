@@ -1,0 +1,81 @@
+\chapter{Introduction}
+
+\begin{flushleft}
+
+	Botnets have been a growing problem for a long time and although we constantly find ways to prevent
+	or stop them altogether, new methods of infecting devices (\textit{attack vectors}) are constantly on the rise.
+	In early September 2016 the botnet named Mirai first appeared, prominently announcing its
+	existence by flooding a security journalist's website with traffic from a botnet consisting
+	of IoT devices. This attack had a large impact on millions of internet users by overwhelming
+	Dyn. After this attack, Mirai was made opensource on Github and was found to be very flexible and adaptable. This opened up the possibility for others to create different strains of Mirai to infect new vulnerable IoT devices.
+
+	\vspace{0.5cm}
+
+	Several studies have investigated the anatomy of botnets and different attack vectors to
+	infect vulnerable devices, but since Mirai is very adapatable; it is hard to find and
+	mitigate infections.
+	A study in September 2016 identified that Mirai had disrupted internet services for hundreds
+	of thousands of Deutsche Telekom customers in Germany, as well as thousands of routers in the UK.
+	It was also discovered that many CCTV cameras as well as other commonly used IoT devices are
+	vulnerable to being infected by Mirai.
+
+	\vspace{0.5cm}
+
+	Since IoT devices have a substantial amount of insecurity issues, billions of units are left vulnerable to all sorts of malware. Mirai tends to be a favoured choice nowadays, both due to the vulnerable nature of IoT devices, with their security not properly integrated into their development, as well as the design of its source code. With Mirai's flexible design, it is what hackers tend to use; applying different strains of the virus for use in different campaigns and few attempts have been made to try and mitigate IoT devices being infected, such as ensuring people limit the "smart" devices in their homes that access the internet for no important reason.
+
+	\vspace{0.5cm}
+
+	\section{Aims and Objectives}
+
+	The goal of this project is to design a program, Miraihilate, to patch a known infection vector of Mirai malware, and to evaluate its effectiveness through means of different metrics. The infection vector takes advantage of a security vulnerability in IoT device software, which involves exploiting default combinations of root usernames and passwords. It is not intended to be the first of programs that counter botnet malware, but will aim to prevent current and future strains of the Mirai virus from using the known infection vector to corrupt IoT devices.
+
+	\subsection{Aims}
+	\begin{itemize}
+    \item{\textbf{Research Aims}}
+    \begin{itemize}
+      \item{To understand how botnets work and differentiate between the operation of a regular botnet and an IoT botnet}
+      \item{To research known security vulnerabilities in the general population of IoT devices, and which of those vulnerabilities can be patched}
+  		\item{To investigate why Mirai is much more effective to other well known botnets}
+    \end{itemize}
+    \item{\textbf{Project Aims}}
+  	\begin{itemize}
+  		\item{To develop a program to patch a security vulnerability in IoT devices to further diminish Mirai's target device population}
+      \item{To research other countermeasures to Mirai malware}
+    \end{itemize}
+	\end{itemize}
+
+	The first project aim listed above, \textit{"To develop a program to patch a security vulnerability in IOT devices..."}, is the main aim of this project, and the other aims are supportive of achieving it. The other aims are used to investigate the effectiveness of Mirai to other botnets, and to help develop the program to patch the security vulnerability, as well as any other possible vulnerabilities that may exist.
+
+	\subsection{Objectives}
+	\begin{itemize}
+		\item{\textbf{Research}}
+		\begin{itemize}
+			\item{Research previous \textit{open-source} botnet malware to compare with Mirai malware}
+			\item{Investigate how other botnet malware removal programs operate}
+      \item{Research known vulnerabilities in IoT devices}
+		\end{itemize}
+		\item{\textbf{Design and Functionality}}
+		\begin{itemize}
+			\item{Produce a program with a Graphical User Interface (GUI), which can be run on a standard linux operating system}
+			\item{Develop a secure, strict access policy for the program}
+			\item{Develop logging and debugging tools, and unit tests for the program}
+			\item{Develop an effective scanning tool which can be manipulated by the user}
+			\item{Create a simple, yet effective design}
+		\end{itemize}
+		\item{\textbf{Testing and Performance}}
+		\begin{itemize}
+			\item{Analyse the effect on time to complete scans based on the size of the IP address range determined by its CIDR suffix}
+			\begin{itemize}
+				\item{Classless inter-domain routing (CIDR) is a set of Internet protocol (IP) standards that is used to create unique identifiers for networks and individual devices\textsuperscript{\cite{cidr}}}
+			\end{itemize}
+			\item{Trial the program on an artificial network as well as a small private network}
+			\item{Test the program to find vulnerabilities in different Linux operating systems and possibly others}
+		\end{itemize}
+		\item{\textbf{Documentation and Evaluation}}
+		\begin{itemize}
+			\item{Develop an in-depth user guide/manual for the program to help system administrators with anything they might not understand when using the program}
+			\item{Analyse evaluation metrics and write a report describing the results found}
+		\end{itemize}
+	\end{itemize}
+
+\end{flushleft}

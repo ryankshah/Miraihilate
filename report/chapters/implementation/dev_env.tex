@@ -1,0 +1,39 @@
+Before I could start developing Miraihilate, I first had to setup my development environment. This included getting the right programming languages installed, and selecting the modules/libraries and frameworks I will use.
+
+\subsection{Python Environment}
+
+Miraihilate's back-end will require Python version 3 and upwards and the most important modules for backend productivity include:
+
+\begin{itemize}
+	\item{Paramiko}
+	\begin{itemize}
+		\item{Paramiko is a library which makes it easier and cleaner to create client or server SSH2 connections. Since Mirai uses SSH as one of its attack vectors to root into an IoT device, Miraihilate will take advantage of this module to make SSH connections to the vulnerable devices.}
+	\end{itemize}
+	\item{Telnetlib}
+	\begin{itemize}
+		\item{This module provides classes and utilities that implement the Telnet protocol. This will allow me to use Telnet as another access point to check the vulnerability of an IoT device.}
+	\end{itemize}
+	\item{MySQL Connector}
+	\begin{itemize}
+		\item{This is a MySQL driver which will allow me to connect to the local Miraihilate database and store relevant scan data.}
+	\end{itemize}
+	\item{BCrypt}
+	\begin{itemize}
+		\item{This module will be used in the setup utility to create the correct BCrypt hash for the initial Miraihilate user's password, which will work with the front-end client.}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Java Environment}
+
+Miraihilate's front-end client interface will be written in Java, and will require at least Java 7 to run. This will be due to the potential for newer features being used in the code, such as lambdas and certain factory patterns. To maintain the development process for the client program, I used Maven to manage the project and allow me to easily add required libraries. The main libraries used for the client program include:
+
+\begin{itemize}
+	\item{JBCrypt}
+	\begin{itemize}
+		\item{The JBCrypt Java library is an OpenBSD-style Blowfish password hashing library. This will be used for checking the password hashes in the database when a user wants to login to Miraihilate.}
+	\end{itemize}
+	\item{MySQL Connector}
+	\begin{itemize}
+		\item{This is a JDBC driver which will be used to connect to the MySQL database for retrieving scan results to be displayed in the client program.}
+	\end{itemize}
+\end{itemize}

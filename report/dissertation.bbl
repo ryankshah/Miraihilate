@@ -1,0 +1,171 @@
+\begin{thebibliography}{10}
+
+\bibitem{cidr}
+Classless inter-domain routing (cidr) and notation for beginners.
+\newblock \url{https://whatismyipaddress.com/cidr}.
+\newblock Accessed: 2017-12-20.
+
+\bibitem{vermesan2011internet}
+Ovidiu Vermesan, Peter Friess, Patrick Guillemin, Sergio Gusmeroli, Harald
+  Sundmaeker, Alessandro Bassi, Ignacio~Soler Jubert, Margaretha Mazura, Mark
+  Harrison, Markus Eisenhauer, et~al.
+\newblock Internet of things strategic research roadmap.
+\newblock {\em Internet of Things-Global Technological and Societal Trends},
+  1:9--52, 2011.
+
+\bibitem{hole2017analysis}
+Christer~Eriksen Hole.
+\newblock Analysis of security for iot: A review of architecture and
+  cryptographic algorithms.
+\newblock Master's thesis, Universitetet i Agder; University of Agder, 2017.
+
+\bibitem{f5article}
+The hunt for iot: The rise of thingbots.
+\newblock
+  \url{https://f5.com/labs/articles/threat-intelligence/ddos/the-hunt-for-iot-the-rise-of-thingbots}.
+\newblock Accessed: 2017-10-21.
+
+\bibitem{fedynyshyn2011detection}
+Gregory Fedynyshyn, Mooi Chuah, and Gang Tan.
+\newblock Detection and classification of different botnet c\&c channels.
+\newblock {\em Autonomic and trusted computing}, pages 228--242, 2011.
+
+\bibitem{botnetwikipedia}
+Botnet.
+\newblock \url{https://en.wikipedia.org/wiki/Botnet}.
+\newblock Accessed: 2017-10-04.
+
+\bibitem{dubendorfer2004analysis}
+Thomas D{\"u}bendorfer and Bernhard Plattner.
+\newblock Analysis of internet relay chat usage by ddos zombies.
+\newblock 2004.
+
+\bibitem{nazario2008net}
+Jose Nazario and Thorsten Holz.
+\newblock As the net churns: Fast-flux botnet observations.
+\newblock In {\em Malicious and Unwanted Software, 2008. MALWARE 2008. 3rd
+  International Conference on}, pages 24--31. IEEE, 2008.
+
+\bibitem{atluri2017botnets}
+Anoop~Chowdary Atluri and Vinh Tran.
+\newblock Botnets threat analysis and detection.
+\newblock In {\em Information Security Practices}, pages 7--28. Springer, 2017.
+
+\bibitem{fabian2007my}
+MARJZ Fabian and Monrose~Andreas Terzis.
+\newblock My botnet is bigger than yours (maybe, better than yours): why size
+  estimates remain challenging.
+\newblock In {\em Proceedings of the 1st USENIX Workshop on Hot Topics in
+  Understanding Botnets, Cambridge, USA}, 2007.
+
+\bibitem{symantecbotnetthreats}
+Four ways cybercriminals profit from botnets.
+\newblock
+  \url{https://www.symantec.com/connect/blogs/four-ways-cybercriminals-profit-botnets}.
+\newblock Accessed: 2017-10-23.
+
+\bibitem{goodman2017survey}
+Nathan Goodman.
+\newblock A survey of advances in botnet technologies.
+\newblock {\em arXiv preprint arXiv:1702.01132}, 2017.
+
+\bibitem{sinha2010insights}
+Prosenjit Sinha, Amine Boukhtouta, Victor~Heber Belarde, and Mourad Debbabi.
+\newblock Insights from the analysis of the mariposa botnet.
+\newblock In {\em Risks and Security of Internet and Systems (CRiSIS), 2010
+  Fifth International Conference on}, pages 1--9. IEEE, 2010.
+
+\bibitem{lee2007botnet}
+Wenke Lee, Cliff Wang, and David Dagon.
+\newblock {\em Botnet detection: countering the largest security threat}.
+\newblock Springer Science \& Business Media, 2007.
+
+\bibitem{gu2008botsniffer}
+Guofei Gu, Junjie Zhang, and Wenke Lee.
+\newblock Botsniffer: Detecting botnet command and control channels in network
+  traffic.
+\newblock In {\em NDSS}, volume~8, pages 1--18, 2008.
+
+\bibitem{braun2017system}
+Lukas Braun and Hans-Joachim Hof.
+\newblock A system to save the internet from the malicious internet of things
+  at home.
+\newblock In {\em submitted for “The Eleventh International Conference on
+  Emerging Security Information, Systems and Technologies, SECURWARE}, 2017.
+
+\bibitem{zeusbotnet}
+Microsoft helps fpi in gameover zeus botnet cleanup.
+\newblock
+  \url{https://blogs.microsoft.com/blog/2014/06/02/microsoft-helps-fbi-in-gameover-zeus-botnet-cleanup/}.
+\newblock Accessed: 2017-10-26.
+
+\bibitem{douligeris2004ddos}
+Christos Douligeris and Aikaterini Mitrokotsa.
+\newblock Ddos attacks and defense mechanisms: classification and
+  state-of-the-art.
+\newblock {\em Computer Networks}, 44(5):643--666, 2004.
+
+\bibitem{securebox}
+Ddos attacks.
+\newblock \url{https://securebox.comodo.com/ssl-sniffing/ddos-attacks/}.
+\newblock Accessed: 2017-10-26.
+
+\bibitem{ddosattackevolution}
+Ddos attacks: the new cyber boogeyman.
+\newblock
+  \url{https://www.reveelium.com/en/ddos-attacks-the-cyber-boogeyman-part-i/}.
+\newblock Accessed: 2017-10-27.
+
+\bibitem{ddosincapsula}
+The top 10 ddos attack trends.
+\newblock
+  \url{https://www.imperva.com/docs/DS_Incapsula_The_Top_10_DDoS_Attack_Trends_ebook.pdf}.
+\newblock Accessed: 2017-10-27.
+
+\bibitem{specht2003taxonomies}
+Stephen Specht and Ruby Lee.
+\newblock Taxonomies of distributed denial of service networks, attacks, tools
+  and countermeasures.
+\newblock {\em Princeton University Technical Report CE-L2003-03}, 2003.
+
+\bibitem{kolias2017ddos}
+Constantinos Kolias, Georgios Kambourakis, Angelos Stavrou, and Jeffrey Voas.
+\newblock Ddos in the iot: Mirai and other botnets.
+\newblock {\em Computer}, 50(7):80--84, 2017.
+
+\bibitem{thingbots}
+Thingbots, the future of botnets in the internet of things.
+\newblock
+  \url{https://securityintelligence.com/thingbots-the-future-of-botnets-in-the-internet-of-things/}.
+\newblock Accessed: 2017-11-02.
+
+\bibitem{angrishi2017turning}
+Kishore Angrishi.
+\newblock Turning internet of things (iot) into internet of vulnerabilities
+  (iov): Iot botnets.
+\newblock {\em arXiv preprint arXiv:1702.03681}, 2017.
+
+\bibitem{aprilunderstanding}
+Manos Antonakakis~Tim April, Michael Bailey, Matthew Bernhard, Elie Bursztein,
+  Jaime Cochran, Zakir Durumeric, J~Alex Halderman, Luca Invernizzi, Michalis
+  Kallitsis, Deepak Kumar, et~al.
+\newblock Understanding the mirai botnet.
+
+\bibitem{incapsulamirai}
+Breaking down mirai: An iot ddos botnet analysis.
+\newblock
+  \url{https://www.incapsula.com/blog/malware-analysis-mirai-ddos-botnet.html}.
+\newblock Accessed: 2017-11-02.
+
+\bibitem{incapsulascanner}
+Mirai scanner by incapsula.
+\newblock \url{https://www.incapsula.com/mirai-scanner/}.
+\newblock Accessed: 2017-11-07.
+
+\bibitem{openbsdbcrypt}
+Openbsd cvs log for src/lib/libc/crypt/bcrypt.c.
+\newblock
+  \url{https://cvsweb.openbsd.org/cgi-bin/cvsweb/src/lib/libc/crypt/bcrypt.c}.
+\newblock Accessed: 2018-02-15.
+
+\end{thebibliography}

@@ -1,0 +1,36 @@
+Before starting development, I first had to decide upon platforms, programming languages and programs that I will use during the development process.
+
+\subsection{Platform and Portability}
+
+Since the program primarily handles IoT devices running embedded versions of the Linux operating system, it makes the most sense to ensure it can run on Linux as well as macOS. The program could be able to run on Windows, but is not entirely appropriate as the program in its first iteration will not focus on Windows OS IoT devices.
+
+\vspace{0.5cm}
+
+When considering the portability of the application, I took into account that not all system administrators will use a Linux operating system from within their organisation. As well as this, I took into account the programming languages that I will use that help aid with making this a cross-platform application.
+
+\subsection{Programming Languages}
+
+The back-end functionality of the program will use Python, whilst the front-end client interface will be written in Java. This is primarily because of SSH and Telnet libraries having much better documentation, and are much more defined than using similar libraries in Java. Doing this will ease the development process, by separating the primary functions of the program from its interface, as well as have the potential for backend scripts to be collated and released as an open-source Python package. To be able to execute the Python code in Java, I wrote a small code executor which executes a local python script within the application (or its directory) and returns its output.
+
+\begin{lstlisting}[language=Java, caption=Executing a Python script in Java]
+Process p = Runtime.getRuntime().exec("python3 <file> <args..>");
+BufferedReader stdInput = new BufferedReader(
+	new InputStreamReader(p.getInputStream())
+);
+\end{lstlisting}
+
+I use a Process to execute the Python script at runtime, and then read the resulting output through a standard input stream.
+
+\subsubsection{Swing vs. JavaFX}
+
+When deciding the library for user interface design, there are questions that need to be addressed to make a fully informed decision:
+
+\begin{itemize}
+	\item{Which library is cleaner and easier to maintain?}
+	\item{What will be faster to build from scratch?}
+	\item{Is it required to maintain a system look-and-feel?}
+\end{itemize}
+
+Because the front-end design of the application is written in Java, there are two possible UI libraries primarily used for desktop application design: JavaFX and Swing. Swing can be seen as a borderline-legacy library when compared to the up-and-coming JavaFX library. With this statement in mind, Swing is fully featured and supported heavily at the moment, whereas JavaFX still doesn’t have important features implemented yet (such as using a default system look-and-feel).
+
+When considering the usability of these libraries, JavaFX is much more consistent across components. However, this is mainly dependent upon how the code is written and structured. Even though JavaFX is more consistent, Swing has more usable components (third-party and built-in) and not all of them have been ported into the newer JavaFX platform. With these factors in mind, I have chosen to use the Swing library due to time constraints, ease of development and a much larger component set available for interface design.

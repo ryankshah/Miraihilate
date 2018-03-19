@@ -79,7 +79,7 @@ public class ScanHistory extends JFrame
         PreparedStatement stmt = null;
         ArrayList<ScanEntry> resultList = new ArrayList<>();
         try {
-            String query = "SELECT id, start_timestamp FROM scan_logs WHERE user_uuid = ?";
+            String query = "SELECT id, start_timestamp FROM scan_logs WHERE user_uuid = ? ORDER BY id DESC";
             stmt = con.prepareStatement(query);
             stmt.setString(1, Client.user.getUUID().toString());
             ResultSet results = stmt.executeQuery();

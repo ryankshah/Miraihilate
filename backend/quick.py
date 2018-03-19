@@ -61,9 +61,8 @@ def gen_pwd():
 #
 # Description
 #   - Scans a specified network range and attempts to bruteforce into
-#     the root accounts found on the IP addresses found using the default
-#     list of username/password combinations defined as `passwords`, using
-#     an SSH connection
+#     device root accounts found on the IP address range, using a default
+#     list of username/password combinations through an SSH connection.
 #
 # TODO: Fix request timeout errors
 def scan_ssh(address, cidr, cp, nd):
