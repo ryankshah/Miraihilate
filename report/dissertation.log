@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.1)  19 MAR 2018 20:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.1)  20 MAR 2018 14:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -535,33 +535,33 @@ LaTeX Warning: Label `my-label' multiply defined.
 ))
 \openout1 = `dissertation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 58.
-LaTeX Font Info:    Try loading font information for MDA+cmr on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for MDA+cmr on input line 60.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/mathdesign/mdacmr.fd
 File: mdacmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 58.
-LaTeX Font Info:    Try loading font information for MDB+cmr on input line 58.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for MDB+cmr on input line 60.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
 File: mdbcmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -650,7 +650,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-Package hyperref Info: Link coloring OFF on input line 58.
+Package hyperref Info: Link coloring OFF on input line 60.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -660,26 +660,26 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 58.
-LaTeX Info: Redefining \pageref on input line 58.
-LaTeX Info: Redefining \nameref on input line 58.
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
 
 (./dissertation.out) (./dissertation.out)
 \@outlinefile=\write3
 \openout3 = `dissertation.out'.
 
 
-<img/logo.png, id=269, 1204.5pt x 602.25pt>
+<img/logo.png, id=289, 1204.5pt x 602.25pt>
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
-Package pdftex.def Info: img/logo.png used on input line 63.
+Package pdftex.def Info: img/logo.png used on input line 65.
 (pdftex.def)             Requested size: 181.18439pt x 90.5909pt.
 LaTeX Font Info:    Font shape `T1/mdbch/m/fsc' will be
-(Font)              scaled to size 10.51207pt on input line 65.
+(Font)              scaled to size 10.51207pt on input line 67.
 LaTeX Font Info:    Font shape `T1/mdbch/m/fsc' will be
-(Font)              scaled to size 11.52008pt on input line 65.
+(Font)              scaled to size 11.52008pt on input line 67.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 13.82408pt on input line 74.
+(Font)              scaled to size 13.82408pt on input line 76.
  [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/l
@@ -690,7 +690,7 @@ ogo.png>]
 (./chapters/declaration.tex
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
 (Font)              scaled to size 19.91054pt on input line 1.
- <img/sig.jpg, id=278, 290.08376pt x 113.42375pt>
+ <img/sig.jpg, id=298, 290.08376pt x 113.42375pt>
 File: img/sig.jpg Graphic file (type jpg)
 
 <use img/sig.jpg>
@@ -700,7 +700,7 @@ Package pdftex.def Info: img/sig.jpg used on input line 6.
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.82 	\include{chapters/declaration}
+l.84 	\include{chapters/declaration}
                                      [1
 
 
@@ -830,7 +830,7 @@ Chapter 2.
 
 
 ]
-<img/botnet_client_server.png, id=399, 250.9375pt x 258.9675pt>
+<img/botnet_client_server.png, id=424, 250.9375pt x 258.9675pt>
 File: img/botnet_client_server.png Graphic file (type png)
 
 <use img/botnet_client_server.png>
@@ -839,7 +839,7 @@ Package pdftex.def Info: img/botnet_client_server.png used on input line 24.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
 (Font)              scaled to size 9.60007pt on input line 25.
 
-<img/botnet_p2p.png, id=400, 250.9375pt x 258.9675pt>
+<img/botnet_p2p.png, id=425, 250.9375pt x 258.9675pt>
 File: img/botnet_p2p.png Graphic file (type png)
  <use img/botnet_p2p.png>
 Package pdftex.def Info: img/botnet_p2p.png used on input line 28.
@@ -854,21 +854,21 @@ Overfull \hbox (1.96576pt too wide) in paragraph at lines 23--31
 [11]) (./chapters/background/botnet_history.tex) [12]
 (./chapters/background/botnet_detection.tex) (./chapters/background/dos.tex
 [13]) (./chapters/background/ddos.tex
-<img/ddos_attack.png, id=453, 1107.13625pt x 553.06625pt>
+<img/ddos_attack.png, id=478, 1107.13625pt x 553.06625pt>
 File: img/ddos_attack.png Graphic file (type png)
 
 <use img/ddos_attack.png>
 Package pdftex.def Info: img/ddos_attack.png used on input line 9.
 (pdftex.def)             Requested size: 339.72592pt x 169.70186pt.
  [14 <./img/ddos_attack.png (PNG copy)>]
-<img/ddos_scale_time.png, id=463, 466.3824pt x 252.945pt>
+<img/ddos_scale_time.png, id=489, 466.3824pt x 252.945pt>
 File: img/ddos_scale_time.png Graphic file (type png)
 
 <use img/ddos_scale_time.png>
 Package pdftex.def Info: img/ddos_scale_time.png used on input line 25.
 (pdftex.def)             Requested size: 339.72592pt x 184.25462pt.
 ) (./chapters/background/ddos_types.tex [15 <./img/ddos_scale_time.png>]
-<img/ddos_agent_handler_model.png, id=476, 478.78876pt x 432.61626pt>
+<img/ddos_agent_handler_model.png, id=502, 478.78876pt x 432.61626pt>
 File: img/ddos_agent_handler_model.png Graphic file (type png)
 
 <use img/ddos_agent_handler_model.png>
@@ -876,7 +876,7 @@ Package pdftex.def Info: img/ddos_agent_handler_model.png used on input line 15
 .
 (pdftex.def)             Requested size: 203.83685pt x 213.39647pt.
 
-<img/ddos_irc_model.png, id=477, 402.50375pt x 432.61626pt>
+<img/ddos_irc_model.png, id=503, 402.50375pt x 432.61626pt>
 File: img/ddos_irc_model.png Graphic file (type png)
 
 <use img/ddos_irc_model.png>
@@ -889,7 +889,7 @@ Overfull \hbox (1.96576pt too wide) in paragraph at lines 14--22
 
 ) (./chapters/background/ddos_motives.tex [16 <./img/ddos_agent_handler_model.p
 ng> <./img/ddos_irc_model.png>]) (./chapters/background/ddos_attack_vectors.tex
-<img/ddos_attack_vectors.png, id=490, 340.8735pt x 161.403pt>
+<img/ddos_attack_vectors.png, id=515, 340.8735pt x 161.403pt>
 File: img/ddos_attack_vectors.png Graphic file (type png)
 
 <use img/ddos_attack_vectors.png>
@@ -897,7 +897,7 @@ Package pdftex.def Info: img/ddos_attack_vectors.png used on input line 13.
 (pdftex.def)             Requested size: 339.72592pt x 160.8731pt.
  [17 <./img/ddos_attack_vectors.png>])
 (./chapters/background/ddos_mitigation.tex
-<img/ddos_prevention_tree.png, id=498, 773.89125pt x 422.57875pt>
+<img/ddos_prevention_tree.png, id=523, 773.89125pt x 422.57875pt>
 File: img/ddos_prevention_tree.png Graphic file (type png)
 
 <use img/ddos_prevention_tree.png>
@@ -915,14 +915,14 @@ Chapter 3.
 
 
 ]
-<img/miraihilate_erd_4x.png, id=540, 1501.61pt x 794.97pt>
+<img/miraihilate_erd_4x.png, id=565, 1501.61pt x 794.97pt>
 File: img/miraihilate_erd_4x.png Graphic file (type png)
 
 <use img/miraihilate_erd_4x.png>
 Package pdftex.def Info: img/miraihilate_erd_4x.png used on input line 37.
 (pdftex.def)             Requested size: 339.72592pt x 179.85521pt.
 ) (./chapters/program_design/interface.tex
-[23 <./img/miraihilate_erd_4x.png>])) [24]
+[23 <./img/miraihilate_erd_4x.png>])) [24] [25]
 \openout2 = `chapters/implementation.aux'.
 
  (./chapters/implementation.tex
@@ -930,14 +930,14 @@ Chapter 4.
 (./chapters/implementation/software_decisions.tex
 LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
 (Font)              scaled to size 11.73846pt on input line 15.
- [25
+ [26
 
 
 
 ])
-(./chapters/implementation/dev_env.tex [26] [27])
+(./chapters/implementation/dev_env.tex [27] [28])
 (./chapters/implementation/setup.tex
-<img/setup_interface_screenshot.png, id=574, 580.1675pt x 329.23pt>
+<img/setup_interface_screenshot.png, id=604, 580.1675pt x 329.23pt>
 File: img/setup_interface_screenshot.png Graphic file (type png)
 
 <use img/setup_interface_screenshot.png>
@@ -947,40 +947,40 @@ Package pdftex.def Info: img/setup_interface_screenshot.png used on input line
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [28 <./img/setup_interface_screenshot.png>]) (./chapters/implementation/backe
+) [29 <./img/setup_interface_screenshot.png>]) (./chapters/implementation/backe
 nd.tex
-<img/backend_structure.png, id=583, 563.10374pt x 303.1325pt>
+<img/backend_structure.png, id=613, 563.10374pt x 303.1325pt>
 File: img/backend_structure.png Graphic file (type png)
 
 <use img/backend_structure.png>
 Package pdftex.def Info: img/backend_structure.png used on input line 7.
 (pdftex.def)             Requested size: 452.9679pt x 243.84308pt.
- [29 <./img/backend_structure.png>] [30])
+ [30 <./img/backend_structure.png>] [31])
 (./chapters/implementation/client.tex
-<img/login_screenshot.png, id=598, 714.67pt x 353.32pt>
+<img/login_screenshot.png, id=627, 714.67pt x 353.32pt>
 File: img/login_screenshot.png Graphic file (type png)
 
 <use img/login_screenshot.png>
 Package pdftex.def Info: img/login_screenshot.png used on input line 7.
 (pdftex.def)             Requested size: 452.9679pt x 223.94058pt.
- [31 <./img/login_screenshot.png>]
-<img/client_iface_screenshot.png, id=608, 915.42pt x 754.82pt>
+ [32 <./img/login_screenshot.png>]
+<img/client_iface_screenshot.png, id=637, 915.42pt x 754.82pt>
 File: img/client_iface_screenshot.png Graphic file (type png)
 
 <use img/client_iface_screenshot.png>
 Package pdftex.def Info: img/client_iface_screenshot.png used on input line 15.
 
 (pdftex.def)             Requested size: 452.9679pt x 373.49309pt.
- [32 <./img/client_iface_screenshot.png>]
-<img/quick_scan_help_screenshot.png, id=615, 768.8725pt x 604.2575pt>
+ [33 <./img/client_iface_screenshot.png>]
+<img/quick_scan_help_screenshot.png, id=644, 768.8725pt x 604.2575pt>
 File: img/quick_scan_help_screenshot.png Graphic file (type png)
 
 <use img/quick_scan_help_screenshot.png>
 Package pdftex.def Info: img/quick_scan_help_screenshot.png used on input line 
 27.
 (pdftex.def)             Requested size: 452.9679pt x 355.99251pt.
- [33 <./img/quick_scan_help_screenshot.png>] <img/recent_scan_view_screenshot.p
-ng, id=622, 431.6125pt x 415.5525pt>
+ [34 <./img/quick_scan_help_screenshot.png>] <img/recent_scan_view_screenshot.p
+ng, id=651, 431.6125pt x 415.5525pt>
 File: img/recent_scan_view_screenshot.png Graphic file (type png)
 
 <use img/recent_scan_view_screenshot.png>
@@ -988,7 +988,7 @@ Package pdftex.def Info: img/recent_scan_view_screenshot.png used on input line
  43.
 (pdftex.def)             Requested size: 226.48395pt x 218.05418pt.
 
-<img/scan_history_screenshot.png, id=623, 714.67pt x 513.92pt>
+<img/scan_history_screenshot.png, id=652, 714.67pt x 513.92pt>
 File: img/scan_history_screenshot.png Graphic file (type png)
 
 <use img/scan_history_screenshot.png>
@@ -1000,8 +1000,8 @@ Overfull \hbox (47.2653pt too wide) in paragraph at lines 42--51
 []$[]$  $[]$ 
  []
 
-[34 <./img/recent_scan_view_screenshot.png> <./img/scan_history_screenshot.png>
-] <img/advanced_scan_screenshot.png, id=631, 513.92pt x 714.67pt>
+[35 <./img/recent_scan_view_screenshot.png> <./img/scan_history_screenshot.png>
+] <img/advanced_scan_screenshot.png, id=660, 513.92pt x 714.67pt>
 File: img/advanced_scan_screenshot.png Graphic file (type png)
 
 <use img/advanced_scan_screenshot.png>
@@ -1014,92 +1014,106 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-))) [35
+))) [36
 
  <./img/advanced_scan_screenshot.png>]
 \openout2 = `chapters/usability_evaluation.aux'.
 
  (./chapters/usability_evaluation.tex
 Chapter 5.
-[36
+[37
 
 
 
-]) [37] (./dissertation.bbl [38
+]) [38] (./dissertation.bbl [39
 
 
-] [39]) [40]
+] [40]) [41]
 \openout2 = `chapters/appendix.aux'.
 
  (./chapters/appendix.tex
 Appendix A.
-(./docs/mockup_feedback/consent_form.tex) [41
+(./docs/mockup_feedback/consent_form.tex) [42
 
 
 ]
 (./docs/mockup_feedback/client_iface_questionnaire.tex
-<img/client_iface_mockup.png, id=694, 803.0pt x 563.10374pt>
+<img/client_iface_mockup.png, id=724, 803.0pt x 563.10374pt>
 File: img/client_iface_mockup.png Graphic file (type png)
 
 <use img/client_iface_mockup.png>
 Package pdftex.def Info: img/client_iface_mockup.png used on input line 10.
 (pdftex.def)             Requested size: 339.72592pt x 238.2376pt.
- [42
+ [43
 
  <./img/client_iface_mockup.png>])
-[43] (./docs/mockup_feedback/advanced_scan_questionnaire.tex
-<img/advanced_scan_mockup.png, id=707, 363.3575pt x 552.0625pt>
+[44] (./docs/mockup_feedback/advanced_scan_questionnaire.tex
+<img/advanced_scan_mockup.png, id=736, 363.3575pt x 552.0625pt>
 File: img/advanced_scan_mockup.png Graphic file (type png)
 
 <use img/advanced_scan_mockup.png>
 Package pdftex.def Info: img/advanced_scan_mockup.png used on input line 10.
 (pdftex.def)             Requested size: 226.48395pt x 344.11159pt.
- [44
+ [45
 
  <./img/advanced_scan_mockup.png>])
-[45] (./docs/mockup_feedback/scan_history_questionnaire.tex
-<img/scan_history_mockup.png, id=719, 451.6875pt x 401.5pt>
+[46] (./docs/mockup_feedback/scan_history_questionnaire.tex
+<img/scan_history_mockup.png, id=748, 451.6875pt x 401.5pt>
 File: img/scan_history_mockup.png Graphic file (type png)
 
 <use img/scan_history_mockup.png>
 Package pdftex.def Info: img/scan_history_mockup.png used on input line 10.
 (pdftex.def)             Requested size: 339.72592pt x 301.9942pt.
-) [46
+) [47
 
  <./img/scan_history_mockup.png>]
 Appendix B.
-(./docs/implementation/example_scan_log.tex) [47
+(./docs/implementation/example_scan_log.tex) [48
 
 
 ]
 Appendix C.
-(./docs/usability_evaluation/question_sheet.tex)
-(./docs/usability_evaluation/question_sheet.tex)) [48
+(./docs/usability_evaluation/consent_form.tex) [49
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
+(./docs/usability_evaluation/question_sheet.tex [50
+
+]) [51]
+(./docs/usability_evaluation/scenario_one.tex) [52
+
+]
+(./docs/usability_evaluation/scenario_two.tex) [53
+
+]
+(./docs/usability_evaluation/scenario_three.tex) [54
+
+]
+(./docs/usability_evaluation/scenario_four.tex) [55
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
  (./dissertation.aux
 (./chapters/declaration.aux) (./chapters/abstract.aux)
 (./chapters/introduction.aux) (./chapters/background.aux)
 (./chapters/program_design.aux) (./chapters/implementation.aux)
 (./chapters/usability_evaluation.aux) (./chapters/appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: D4CFE717484CDC62F7BE055B40999C06;4476.
+(rerunfilecheck)             Checksum: 24B91727921E34A1353A4BE656CEB221;4804.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
- 12662 strings out of 492995
- 192859 string characters out of 6132705
+ 12698 strings out of 492995
+ 193538 string characters out of 6132705
  303117 words of memory out of 5000000
- 15618 multiletter control sequences out of 15000+600000
+ 15625 multiletter control sequences out of 15000+600000
  50050 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,11n,95p,984b,1168s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1114,10 +1128,10 @@ local/texlive/2017/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chri
 8t.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt1095
 .pfb>
-Output written on dissertation.pdf (49 pages, 1357013 bytes).
+Output written on dissertation.pdf (56 pages, 1362680 bytes).
 PDF statistics:
- 811 PDF objects out of 1000 (max. 8388607)
- 698 compressed objects within 7 object streams
- 198 named destinations out of 1000 (max. 500000)
- 639 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 874 PDF objects out of 1000 (max. 8388607)
+ 753 compressed objects within 8 object streams
+ 215 named destinations out of 1000 (max. 500000)
+ 679 words of extra memory for PDF output out of 10000 (max. 10000000)
 

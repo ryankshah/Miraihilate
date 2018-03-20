@@ -32,40 +32,45 @@
 \contentsline {subsection}{\numberline {3.1.3}Database Structure}{23}{subsection.3.1.3}
 \contentsline {section}{\numberline {3.2}Interface Decisions}{24}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Mockup Design}{24}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Feedback Survey}{24}{subsection.3.2.2}
 \contentsline {subsubsection}{Recruitment}{24}{subsubsection*.12}
 \contentsline {subsubsection}{Initial Feedback Analysis}{24}{subsubsection*.13}
-\contentsline {subsection}{\numberline {3.2.2}Pre-Implementation}{24}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Implementation}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Sofware Decisions}{25}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Platform and Portability}{25}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Programming Languages}{25}{subsection.4.1.2}
-\contentsline {subsubsection}{Swing vs. JavaFX}{26}{subsubsection*.14}
-\contentsline {section}{\numberline {4.2}Development Environment}{26}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Python Environment}{26}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Java Environment}{27}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Setup Utility}{28}{section.4.3}
-\contentsline {section}{\numberline {4.4}Backend Development}{29}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Backend Structure}{29}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Logging}{30}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Scanning}{30}{subsection.4.4.3}
-\contentsline {subsubsection}{SSH Scanning}{31}{subsubsection*.17}
-\contentsline {subsubsection}{<Telnet Scanning?>}{31}{subsubsection*.18}
-\contentsline {section}{\numberline {4.5}Client Development}{31}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Quick Scanning}{32}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Viewing Scan Logs}{33}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Advanced Scanning}{35}{subsection.4.5.3}
-\contentsline {chapter}{\numberline {5}Usability Evaluation}{36}{chapter.5}
-\contentsline {section}{\numberline {5.1}Recruitment}{36}{section.5.1}
-\contentsline {section}{\numberline {5.2}Conducting the Study}{36}{section.5.2}
-\contentsline {section}{\numberline {5.3}Results Analysis}{37}{section.5.3}
-\contentsline {chapter}{References}{38}{chapter*.24}
-\contentsline {chapter}{Appendix \numberline {A}Mockup Design Appendix}{41}{Appendix.a.A}
-\contentsline {section}{\numberline {A.1}Mockup Design Consent Form}{41}{section.a.A.1}
-\contentsline {section}{\numberline {A.2}Client Interface Feedback Questionnaire}{42}{section.a.A.2}
-\contentsline {section}{\numberline {A.3}Advanced Scan Feedback Questionnaire}{44}{section.a.A.3}
-\contentsline {section}{\numberline {A.4}Scan History Feedback Questionnaire}{46}{section.a.A.4}
-\contentsline {chapter}{Appendix \numberline {B}Implementation Appendix}{47}{Appendix.a.B}
-\contentsline {section}{\numberline {B.1}Example SSH Scan Log}{47}{section.a.B.1}
-\contentsline {chapter}{Appendix \numberline {C}Usability Evaluation Appendix}{48}{Appendix.a.C}
-\contentsline {section}{\numberline {C.1}Pre-Study Question Sheet}{48}{section.a.C.1}
-\contentsline {section}{\numberline {C.2}Usability Study Consent Form}{48}{section.a.C.2}
+\contentsline {subsection}{\numberline {3.2.3}Pre-Implementation}{25}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Implementation}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Sofware Decisions}{26}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Platform and Portability}{26}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Programming Languages}{26}{subsection.4.1.2}
+\contentsline {subsubsection}{Swing vs. JavaFX}{27}{subsubsection*.14}
+\contentsline {section}{\numberline {4.2}Development Environment}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Python Environment}{27}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Java Environment}{28}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Setup Utility}{29}{section.4.3}
+\contentsline {section}{\numberline {4.4}Backend Development}{30}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Backend Structure}{30}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Logging}{31}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Scanning}{31}{subsection.4.4.3}
+\contentsline {subsubsection}{SSH Scanning}{32}{subsubsection*.17}
+\contentsline {subsubsection}{<Telnet Scanning?>}{32}{subsubsection*.18}
+\contentsline {section}{\numberline {4.5}Client Development}{32}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Quick Scanning}{33}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Viewing Scan Logs}{34}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Advanced Scanning}{36}{subsection.4.5.3}
+\contentsline {chapter}{\numberline {5}Usability Evaluation}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}Recruitment}{37}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conducting the Study}{37}{section.5.2}
+\contentsline {section}{\numberline {5.3}Results Analysis}{38}{section.5.3}
+\contentsline {chapter}{References}{39}{chapter*.24}
+\contentsline {chapter}{Appendix \numberline {A}Mockup Design Appendix}{42}{Appendix.a.A}
+\contentsline {section}{\numberline {A.1}Mockup Design Consent Form}{42}{section.a.A.1}
+\contentsline {section}{\numberline {A.2}Client Interface Feedback Questionnaire}{43}{section.a.A.2}
+\contentsline {section}{\numberline {A.3}Advanced Scan Feedback Questionnaire}{45}{section.a.A.3}
+\contentsline {section}{\numberline {A.4}Scan History Feedback Questionnaire}{47}{section.a.A.4}
+\contentsline {chapter}{Appendix \numberline {B}Implementation Appendix}{48}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Example SSH Scan Log}{48}{section.a.B.1}
+\contentsline {chapter}{Appendix \numberline {C}Usability Evaluation Appendix}{49}{Appendix.a.C}
+\contentsline {section}{\numberline {C.1}Usability Study Consent Form}{49}{section.a.C.1}
+\contentsline {section}{\numberline {C.2}Pre-Study Question Sheet}{50}{section.a.C.2}
+\contentsline {section}{\numberline {C.3}Scenario One}{52}{section.a.C.3}
+\contentsline {section}{\numberline {C.4}Scenario Two}{53}{section.a.C.4}
+\contentsline {section}{\numberline {C.5}Scenario Three}{54}{section.a.C.5}
+\contentsline {section}{\numberline {C.6}Scenario Four}{55}{section.a.C.6}

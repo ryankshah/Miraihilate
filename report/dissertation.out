@@ -32,35 +32,40 @@
 \BOOKMARK [2][-]{subsection.3.1.3}{Database Structure}{section.3.1}% 32
 \BOOKMARK [1][-]{section.3.2}{Interface Decisions}{chapter.3}% 33
 \BOOKMARK [2][-]{subsection.3.2.1}{Mockup Design}{section.3.2}% 34
-\BOOKMARK [2][-]{subsection.3.2.2}{Pre-Implementation}{section.3.2}% 35
-\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 36
-\BOOKMARK [1][-]{section.4.1}{Sofware Decisions}{chapter.4}% 37
-\BOOKMARK [2][-]{subsection.4.1.1}{Platform and Portability}{section.4.1}% 38
-\BOOKMARK [2][-]{subsection.4.1.2}{Programming Languages}{section.4.1}% 39
-\BOOKMARK [1][-]{section.4.2}{Development Environment}{chapter.4}% 40
-\BOOKMARK [2][-]{subsection.4.2.1}{Python Environment}{section.4.2}% 41
-\BOOKMARK [2][-]{subsection.4.2.2}{Java Environment}{section.4.2}% 42
-\BOOKMARK [1][-]{section.4.3}{Setup Utility}{chapter.4}% 43
-\BOOKMARK [1][-]{section.4.4}{Backend Development}{chapter.4}% 44
-\BOOKMARK [2][-]{subsection.4.4.1}{Backend Structure}{section.4.4}% 45
-\BOOKMARK [2][-]{subsection.4.4.2}{Logging}{section.4.4}% 46
-\BOOKMARK [2][-]{subsection.4.4.3}{Scanning}{section.4.4}% 47
-\BOOKMARK [1][-]{section.4.5}{Client Development}{chapter.4}% 48
-\BOOKMARK [2][-]{subsection.4.5.1}{Quick Scanning}{section.4.5}% 49
-\BOOKMARK [2][-]{subsection.4.5.2}{Viewing Scan Logs}{section.4.5}% 50
-\BOOKMARK [2][-]{subsection.4.5.3}{Advanced Scanning}{section.4.5}% 51
-\BOOKMARK [0][-]{chapter.5}{Usability Evaluation}{}% 52
-\BOOKMARK [1][-]{section.5.1}{Recruitment}{chapter.5}% 53
-\BOOKMARK [1][-]{section.5.2}{Conducting the Study}{chapter.5}% 54
-\BOOKMARK [1][-]{section.5.3}{Results Analysis}{chapter.5}% 55
-\BOOKMARK [0][-]{chapter*.24}{References}{}% 56
-\BOOKMARK [0][-]{Appendix.a.A}{Appendix Mockup Design Appendix}{}% 57
-\BOOKMARK [1][-]{section.a.A.1}{Mockup Design Consent Form}{Appendix.a.A}% 58
-\BOOKMARK [1][-]{section.a.A.2}{Client Interface Feedback Questionnaire}{Appendix.a.A}% 59
-\BOOKMARK [1][-]{section.a.A.3}{Advanced Scan Feedback Questionnaire}{Appendix.a.A}% 60
-\BOOKMARK [1][-]{section.a.A.4}{Scan History Feedback Questionnaire}{Appendix.a.A}% 61
-\BOOKMARK [0][-]{Appendix.a.B}{Appendix Implementation Appendix}{}% 62
-\BOOKMARK [1][-]{section.a.B.1}{Example SSH Scan Log}{Appendix.a.B}% 63
-\BOOKMARK [0][-]{Appendix.a.C}{Appendix Usability Evaluation Appendix}{}% 64
-\BOOKMARK [1][-]{section.a.C.1}{Pre-Study Question Sheet}{Appendix.a.C}% 65
-\BOOKMARK [1][-]{section.a.C.2}{Usability Study Consent Form}{Appendix.a.C}% 66
+\BOOKMARK [2][-]{subsection.3.2.2}{Feedback Survey}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.3}{Pre-Implementation}{section.3.2}% 36
+\BOOKMARK [0][-]{chapter.4}{Implementation}{}% 37
+\BOOKMARK [1][-]{section.4.1}{Sofware Decisions}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.1.1}{Platform and Portability}{section.4.1}% 39
+\BOOKMARK [2][-]{subsection.4.1.2}{Programming Languages}{section.4.1}% 40
+\BOOKMARK [1][-]{section.4.2}{Development Environment}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.2.1}{Python Environment}{section.4.2}% 42
+\BOOKMARK [2][-]{subsection.4.2.2}{Java Environment}{section.4.2}% 43
+\BOOKMARK [1][-]{section.4.3}{Setup Utility}{chapter.4}% 44
+\BOOKMARK [1][-]{section.4.4}{Backend Development}{chapter.4}% 45
+\BOOKMARK [2][-]{subsection.4.4.1}{Backend Structure}{section.4.4}% 46
+\BOOKMARK [2][-]{subsection.4.4.2}{Logging}{section.4.4}% 47
+\BOOKMARK [2][-]{subsection.4.4.3}{Scanning}{section.4.4}% 48
+\BOOKMARK [1][-]{section.4.5}{Client Development}{chapter.4}% 49
+\BOOKMARK [2][-]{subsection.4.5.1}{Quick Scanning}{section.4.5}% 50
+\BOOKMARK [2][-]{subsection.4.5.2}{Viewing Scan Logs}{section.4.5}% 51
+\BOOKMARK [2][-]{subsection.4.5.3}{Advanced Scanning}{section.4.5}% 52
+\BOOKMARK [0][-]{chapter.5}{Usability Evaluation}{}% 53
+\BOOKMARK [1][-]{section.5.1}{Recruitment}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.2}{Conducting the Study}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.3}{Results Analysis}{chapter.5}% 56
+\BOOKMARK [0][-]{chapter*.24}{References}{}% 57
+\BOOKMARK [0][-]{Appendix.a.A}{Appendix Mockup Design Appendix}{}% 58
+\BOOKMARK [1][-]{section.a.A.1}{Mockup Design Consent Form}{Appendix.a.A}% 59
+\BOOKMARK [1][-]{section.a.A.2}{Client Interface Feedback Questionnaire}{Appendix.a.A}% 60
+\BOOKMARK [1][-]{section.a.A.3}{Advanced Scan Feedback Questionnaire}{Appendix.a.A}% 61
+\BOOKMARK [1][-]{section.a.A.4}{Scan History Feedback Questionnaire}{Appendix.a.A}% 62
+\BOOKMARK [0][-]{Appendix.a.B}{Appendix Implementation Appendix}{}% 63
+\BOOKMARK [1][-]{section.a.B.1}{Example SSH Scan Log}{Appendix.a.B}% 64
+\BOOKMARK [0][-]{Appendix.a.C}{Appendix Usability Evaluation Appendix}{}% 65
+\BOOKMARK [1][-]{section.a.C.1}{Usability Study Consent Form}{Appendix.a.C}% 66
+\BOOKMARK [1][-]{section.a.C.2}{Pre-Study Question Sheet}{Appendix.a.C}% 67
+\BOOKMARK [1][-]{section.a.C.3}{Scenario One}{Appendix.a.C}% 68
+\BOOKMARK [1][-]{section.a.C.4}{Scenario Two}{Appendix.a.C}% 69
+\BOOKMARK [1][-]{section.a.C.5}{Scenario Three}{Appendix.a.C}% 70
+\BOOKMARK [1][-]{section.a.C.6}{Scenario Four}{Appendix.a.C}% 71
