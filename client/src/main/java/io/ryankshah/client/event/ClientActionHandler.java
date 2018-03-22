@@ -2,6 +2,7 @@ package io.ryankshah.client.event;
 
 import io.ryankshah.Client;
 import io.ryankshah.client.gui.AdvancedScan;
+import io.ryankshah.client.gui.EditProfile;
 import io.ryankshah.client.gui.QuickScanPanel;
 import io.ryankshah.client.gui.ScanHistory;
 import io.ryankshah.util.resource.ResourceLoader;
@@ -68,8 +69,7 @@ public class ClientActionHandler implements ActionListener
         }
 
         if(e.getSource() == Client.editProfileButton) {
-            // TODO: Show edit profile window
-            System.out.println("Show edit profile window");
+            new EditProfile(Client.user).setVisible(true);
         }
 
         if(e.getSource() == Client.userGuideButton) {
@@ -78,7 +78,7 @@ public class ClientActionHandler implements ActionListener
 
         // Logout
         if(e.getSource() == Client.logoutButton) {
-            int result = JOptionPane.showConfirmDialog(Client.INSTANCE, "Are you sure you want to logout?", "Qutting Miraihilate?", JOptionPane.YES_NO_OPTION);
+            int result = JOptionPane.showConfirmDialog(Client.INSTANCE, "Are you sure you want to logout?", "Leaving so soon?", JOptionPane.YES_NO_OPTION);
             if(result == JOptionPane.YES_OPTION) {
                 System.exit(0);
             }

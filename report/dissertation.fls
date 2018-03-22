@@ -157,6 +157,10 @@ INPUT chapters/implementation.aux
 INPUT chapters/implementation.aux
 INPUT chapters/usability_evaluation.aux
 INPUT chapters/usability_evaluation.aux
+INPUT chapters/testing_and_performance_assessment.aux
+INPUT chapters/testing_and_performance_assessment.aux
+INPUT chapters/conclusion_and_reflection.aux
+INPUT chapters/conclusion_and_reflection.aux
 INPUT chapters/appendix.aux
 INPUT chapters/appendix.aux
 OUTPUT dissertation.aux
@@ -399,6 +403,12 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
 OUTPUT chapters/usability_evaluation.aux
 INPUT chapters/usability_evaluation.tex
 INPUT chapters/usability_evaluation.tex
+OUTPUT chapters/testing_and_performance_assessment.aux
+INPUT chapters/testing_and_performance_assessment.tex
+INPUT chapters/testing_and_performance_assessment.tex
+OUTPUT chapters/conclusion_and_reflection.aux
+INPUT chapters/conclusion_and_reflection.tex
+INPUT chapters/conclusion_and_reflection.tex
 INPUT dissertation.bbl
 INPUT dissertation.bbl
 OUTPUT chapters/appendix.aux
@@ -450,6 +460,10 @@ INPUT chapters/implementation.aux
 INPUT chapters/implementation.aux
 INPUT chapters/usability_evaluation.aux
 INPUT chapters/usability_evaluation.aux
+INPUT chapters/testing_and_performance_assessment.aux
+INPUT chapters/testing_and_performance_assessment.aux
+INPUT chapters/conclusion_and_reflection.aux
+INPUT chapters/conclusion_and_reflection.aux
 INPUT chapters/appendix.aux
 INPUT chapters/appendix.aux
 INPUT ./dissertation.out

@@ -1,0 +1,68 @@
+\begin{center}
+	\textbf{Scenario Four}\par
+	\textbf{Participant No.}\par
+\end{center}
+
+In this scenario, you will be performing an advanced scan. The procedure is similar to performing a quick scan, with the added functionality of providing a timeout and extra commands to the device. Please follow all the steps below.
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+	\item{Open the "Advanced Scan" window.}
+	\item{
+		Locate the quick scan panel and fill in the field with the following details:\par
+		\begin{lstlisting}
+			IP Address: 127.0.0.1
+			CIDR: 30
+			Change Password: Unticked
+			Notify Device: Ticked
+		\end{lstlisting}
+		\par Press the help button if you want more information on what these things mean.
+	}
+	\item{
+		Choose a timeout value under 8 seconds and enter one or more commands from the following list:
+		\begin{lstlisting}
+			# Create an alert with Hello World
+			- notify-send 'Hello World'
+
+			# Create a directory in the root user home directory called hello
+			- mkdir hello
+
+			# Show who is logged on and what they are doing
+			- w
+
+			# Create a directory called study and create a file called test.txt inside it, containing "Hello World"
+			- mkdir study; cd study; echo "Hello World" > test.txt
+
+			# List items in the root user home directory
+			- ls
+		\end{lstlisting}
+	}
+	\item{Pressed the Perform Advanced Scan button.}
+	\item{Go back to the main interface and see your scan in the "Recent Scan" panel.}
+\end{enumerate}
+
+\begin{center}
+	\line(1,0){450}
+\end{center}
+
+After completing the above scenario, please answer all questions below.
+
+\vspace{0.5cm}
+
+\textbf{1.} On a scale of 1-10 how easy was it to perform the advanced scan?
+
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\textwidth}{XXXXXXXXXX}
+		\multicolumn{5}{l}{Very Difficult} & \multicolumn{5}{r}{Very Easy} \\
+		\centering
+		1    & 2    & 3    & 4    & 5    & 6    & 7    & 8    & 9    & 10
+	\end{tabularx}
+\end{table}
+
+\textbf{2.} What timeout and commands did you enter in the advanced scan?
+
+\vspace{3cm}
+
+\textbf{3.} Are there any improvements or changes you would make to the quick scan panel to improve its usability?

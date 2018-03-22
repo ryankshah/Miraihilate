@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.1)  20 MAR 2018 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.3.1)  21 MAR 2018 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -525,7 +525,9 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (./dissertation.aux (./chapters/declaration.aux) (./chapters/abstract.aux)
 (./chapters/introduction.aux) (./chapters/background.aux)
 (./chapters/program_design.aux) (./chapters/implementation.aux)
-(./chapters/usability_evaluation.aux) (./chapters/appendix.aux
+(./chapters/usability_evaluation.aux)
+(./chapters/testing_and_performance_assessment.aux)
+(./chapters/conclusion_and_reflection.aux) (./chapters/appendix.aux
 
 LaTeX Warning: Label `my-label' multiply defined.
 
@@ -669,7 +671,7 @@ LaTeX Info: Redefining \nameref on input line 60.
 \openout3 = `dissertation.out'.
 
 
-<img/logo.png, id=289, 1204.5pt x 602.25pt>
+<img/logo.png, id=297, 1204.5pt x 602.25pt>
 File: img/logo.png Graphic file (type png)
  <use img/logo.png>
 Package pdftex.def Info: img/logo.png used on input line 65.
@@ -690,7 +692,7 @@ ogo.png>]
 (./chapters/declaration.tex
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
 (Font)              scaled to size 19.91054pt on input line 1.
- <img/sig.jpg, id=298, 290.08376pt x 113.42375pt>
+ <img/sig.jpg, id=306, 290.08376pt x 113.42375pt>
 File: img/sig.jpg Graphic file (type jpg)
 
 <use img/sig.jpg>
@@ -830,7 +832,7 @@ Chapter 2.
 
 
 ]
-<img/botnet_client_server.png, id=424, 250.9375pt x 258.9675pt>
+<img/botnet_client_server.png, id=434, 250.9375pt x 258.9675pt>
 File: img/botnet_client_server.png Graphic file (type png)
 
 <use img/botnet_client_server.png>
@@ -839,7 +841,7 @@ Package pdftex.def Info: img/botnet_client_server.png used on input line 24.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
 (Font)              scaled to size 9.60007pt on input line 25.
 
-<img/botnet_p2p.png, id=425, 250.9375pt x 258.9675pt>
+<img/botnet_p2p.png, id=435, 250.9375pt x 258.9675pt>
 File: img/botnet_p2p.png Graphic file (type png)
  <use img/botnet_p2p.png>
 Package pdftex.def Info: img/botnet_p2p.png used on input line 28.
@@ -854,21 +856,21 @@ Overfull \hbox (1.96576pt too wide) in paragraph at lines 23--31
 [11]) (./chapters/background/botnet_history.tex) [12]
 (./chapters/background/botnet_detection.tex) (./chapters/background/dos.tex
 [13]) (./chapters/background/ddos.tex
-<img/ddos_attack.png, id=478, 1107.13625pt x 553.06625pt>
+<img/ddos_attack.png, id=489, 1107.13625pt x 553.06625pt>
 File: img/ddos_attack.png Graphic file (type png)
 
 <use img/ddos_attack.png>
 Package pdftex.def Info: img/ddos_attack.png used on input line 9.
 (pdftex.def)             Requested size: 339.72592pt x 169.70186pt.
  [14 <./img/ddos_attack.png (PNG copy)>]
-<img/ddos_scale_time.png, id=489, 466.3824pt x 252.945pt>
+<img/ddos_scale_time.png, id=499, 466.3824pt x 252.945pt>
 File: img/ddos_scale_time.png Graphic file (type png)
 
 <use img/ddos_scale_time.png>
 Package pdftex.def Info: img/ddos_scale_time.png used on input line 25.
 (pdftex.def)             Requested size: 339.72592pt x 184.25462pt.
 ) (./chapters/background/ddos_types.tex [15 <./img/ddos_scale_time.png>]
-<img/ddos_agent_handler_model.png, id=502, 478.78876pt x 432.61626pt>
+<img/ddos_agent_handler_model.png, id=512, 478.78876pt x 432.61626pt>
 File: img/ddos_agent_handler_model.png Graphic file (type png)
 
 <use img/ddos_agent_handler_model.png>
@@ -876,7 +878,7 @@ Package pdftex.def Info: img/ddos_agent_handler_model.png used on input line 15
 .
 (pdftex.def)             Requested size: 203.83685pt x 213.39647pt.
 
-<img/ddos_irc_model.png, id=503, 402.50375pt x 432.61626pt>
+<img/ddos_irc_model.png, id=513, 402.50375pt x 432.61626pt>
 File: img/ddos_irc_model.png Graphic file (type png)
 
 <use img/ddos_irc_model.png>
@@ -889,7 +891,7 @@ Overfull \hbox (1.96576pt too wide) in paragraph at lines 14--22
 
 ) (./chapters/background/ddos_motives.tex [16 <./img/ddos_agent_handler_model.p
 ng> <./img/ddos_irc_model.png>]) (./chapters/background/ddos_attack_vectors.tex
-<img/ddos_attack_vectors.png, id=515, 340.8735pt x 161.403pt>
+<img/ddos_attack_vectors.png, id=525, 340.8735pt x 161.403pt>
 File: img/ddos_attack_vectors.png Graphic file (type png)
 
 <use img/ddos_attack_vectors.png>
@@ -897,7 +899,7 @@ Package pdftex.def Info: img/ddos_attack_vectors.png used on input line 13.
 (pdftex.def)             Requested size: 339.72592pt x 160.8731pt.
  [17 <./img/ddos_attack_vectors.png>])
 (./chapters/background/ddos_mitigation.tex
-<img/ddos_prevention_tree.png, id=523, 773.89125pt x 422.57875pt>
+<img/ddos_prevention_tree.png, id=533, 773.89125pt x 422.57875pt>
 File: img/ddos_prevention_tree.png Graphic file (type png)
 
 <use img/ddos_prevention_tree.png>
@@ -915,7 +917,7 @@ Chapter 3.
 
 
 ]
-<img/miraihilate_erd_4x.png, id=565, 1501.61pt x 794.97pt>
+<img/miraihilate_erd_4x.png, id=575, 1501.61pt x 794.97pt>
 File: img/miraihilate_erd_4x.png Graphic file (type png)
 
 <use img/miraihilate_erd_4x.png>
@@ -937,7 +939,7 @@ LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
 ])
 (./chapters/implementation/dev_env.tex [27] [28])
 (./chapters/implementation/setup.tex
-<img/setup_interface_screenshot.png, id=604, 580.1675pt x 329.23pt>
+<img/setup_interface_screenshot.png, id=614, 580.1675pt x 329.23pt>
 File: img/setup_interface_screenshot.png Graphic file (type png)
 
 <use img/setup_interface_screenshot.png>
@@ -949,7 +951,7 @@ Package pdftex.def Info: img/setup_interface_screenshot.png used on input line
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) [29 <./img/setup_interface_screenshot.png>]) (./chapters/implementation/backe
 nd.tex
-<img/backend_structure.png, id=613, 563.10374pt x 303.1325pt>
+<img/backend_structure.png, id=623, 563.10374pt x 303.1325pt>
 File: img/backend_structure.png Graphic file (type png)
 
 <use img/backend_structure.png>
@@ -957,14 +959,14 @@ Package pdftex.def Info: img/backend_structure.png used on input line 7.
 (pdftex.def)             Requested size: 452.9679pt x 243.84308pt.
  [30 <./img/backend_structure.png>] [31])
 (./chapters/implementation/client.tex
-<img/login_screenshot.png, id=627, 714.67pt x 353.32pt>
+<img/login_screenshot.png, id=637, 714.67pt x 353.32pt>
 File: img/login_screenshot.png Graphic file (type png)
 
 <use img/login_screenshot.png>
 Package pdftex.def Info: img/login_screenshot.png used on input line 7.
 (pdftex.def)             Requested size: 452.9679pt x 223.94058pt.
  [32 <./img/login_screenshot.png>]
-<img/client_iface_screenshot.png, id=637, 915.42pt x 754.82pt>
+<img/client_iface_screenshot.png, id=647, 915.42pt x 754.82pt>
 File: img/client_iface_screenshot.png Graphic file (type png)
 
 <use img/client_iface_screenshot.png>
@@ -972,7 +974,7 @@ Package pdftex.def Info: img/client_iface_screenshot.png used on input line 15.
 
 (pdftex.def)             Requested size: 452.9679pt x 373.49309pt.
  [33 <./img/client_iface_screenshot.png>]
-<img/quick_scan_help_screenshot.png, id=644, 768.8725pt x 604.2575pt>
+<img/quick_scan_help_screenshot.png, id=654, 768.8725pt x 604.2575pt>
 File: img/quick_scan_help_screenshot.png Graphic file (type png)
 
 <use img/quick_scan_help_screenshot.png>
@@ -980,7 +982,7 @@ Package pdftex.def Info: img/quick_scan_help_screenshot.png used on input line
 27.
 (pdftex.def)             Requested size: 452.9679pt x 355.99251pt.
  [34 <./img/quick_scan_help_screenshot.png>] <img/recent_scan_view_screenshot.p
-ng, id=651, 431.6125pt x 415.5525pt>
+ng, id=661, 431.6125pt x 415.5525pt>
 File: img/recent_scan_view_screenshot.png Graphic file (type png)
 
 <use img/recent_scan_view_screenshot.png>
@@ -988,7 +990,7 @@ Package pdftex.def Info: img/recent_scan_view_screenshot.png used on input line
  43.
 (pdftex.def)             Requested size: 226.48395pt x 218.05418pt.
 
-<img/scan_history_screenshot.png, id=652, 714.67pt x 513.92pt>
+<img/scan_history_screenshot.png, id=662, 714.67pt x 513.92pt>
 File: img/scan_history_screenshot.png Graphic file (type png)
 
 <use img/scan_history_screenshot.png>
@@ -1001,7 +1003,7 @@ Overfull \hbox (47.2653pt too wide) in paragraph at lines 42--51
  []
 
 [35 <./img/recent_scan_view_screenshot.png> <./img/scan_history_screenshot.png>
-] <img/advanced_scan_screenshot.png, id=660, 513.92pt x 714.67pt>
+] <img/advanced_scan_screenshot.png, id=670, 513.92pt x 714.67pt>
 File: img/advanced_scan_screenshot.png Graphic file (type png)
 
 <use img/advanced_scan_screenshot.png>
@@ -1025,90 +1027,110 @@ Chapter 5.
 
 
 
-]) [38] (./dissertation.bbl [39
+]) [38]
+\openout2 = `chapters/testing_and_performance_assessment.aux'.
+
+ (./chapters/testing_and_performance_assessment.tex
+Chapter 6.
+) [39
 
 
-] [40]) [41]
+
+]
+\openout2 = `chapters/conclusion_and_reflection.aux'.
+
+ (./chapters/conclusion_and_reflection.tex
+Chapter 7.
+) [40
+
+
+
+] (./dissertation.bbl [41
+
+
+] [42]) [43]
 \openout2 = `chapters/appendix.aux'.
 
  (./chapters/appendix.tex
 Appendix A.
-(./docs/mockup_feedback/consent_form.tex) [42
+(./docs/mockup_feedback/consent_form.tex) [44
 
 
 ]
 (./docs/mockup_feedback/client_iface_questionnaire.tex
-<img/client_iface_mockup.png, id=724, 803.0pt x 563.10374pt>
+<img/client_iface_mockup.png, id=742, 803.0pt x 563.10374pt>
 File: img/client_iface_mockup.png Graphic file (type png)
 
 <use img/client_iface_mockup.png>
 Package pdftex.def Info: img/client_iface_mockup.png used on input line 10.
 (pdftex.def)             Requested size: 339.72592pt x 238.2376pt.
- [43
+ [45
 
  <./img/client_iface_mockup.png>])
-[44] (./docs/mockup_feedback/advanced_scan_questionnaire.tex
-<img/advanced_scan_mockup.png, id=736, 363.3575pt x 552.0625pt>
+[46] (./docs/mockup_feedback/advanced_scan_questionnaire.tex
+<img/advanced_scan_mockup.png, id=754, 363.3575pt x 552.0625pt>
 File: img/advanced_scan_mockup.png Graphic file (type png)
 
 <use img/advanced_scan_mockup.png>
 Package pdftex.def Info: img/advanced_scan_mockup.png used on input line 10.
 (pdftex.def)             Requested size: 226.48395pt x 344.11159pt.
- [45
+ [47
 
  <./img/advanced_scan_mockup.png>])
-[46] (./docs/mockup_feedback/scan_history_questionnaire.tex
-<img/scan_history_mockup.png, id=748, 451.6875pt x 401.5pt>
+[48] (./docs/mockup_feedback/scan_history_questionnaire.tex
+<img/scan_history_mockup.png, id=767, 451.6875pt x 401.5pt>
 File: img/scan_history_mockup.png Graphic file (type png)
 
 <use img/scan_history_mockup.png>
 Package pdftex.def Info: img/scan_history_mockup.png used on input line 10.
 (pdftex.def)             Requested size: 339.72592pt x 301.9942pt.
-) [47
+) [49
 
  <./img/scan_history_mockup.png>]
 Appendix B.
-(./docs/implementation/example_scan_log.tex) [48
+(./docs/implementation/example_scan_log.tex) [50
 
 
 ]
 Appendix C.
-(./docs/usability_evaluation/consent_form.tex) [49
+(./docs/usability_evaluation/consent_form.tex) [51
 
 
 ]
-(./docs/usability_evaluation/question_sheet.tex [50
+(./docs/usability_evaluation/question_sheet.tex [52
 
-]) [51
-
-]
-(./docs/usability_evaluation/scenario_one.tex) [52
+]) [53
 
 ]
-(./docs/usability_evaluation/scenario_two.tex [53
-
-] [54
-
-]) [55
+(./docs/usability_evaluation/scenario_one.tex) [54
 
 ]
-(./docs/usability_evaluation/scenario_three.tex) [56
+(./docs/usability_evaluation/scenario_two.tex [55
+
+] [56
+
+]) [57
 
 ]
-(./docs/usability_evaluation/scenario_four.tex [57
+(./docs/usability_evaluation/scenario_three.tex) [58
 
-]) [58])
+]
+(./docs/usability_evaluation/scenario_four.tex [59
+
+]) [60])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 105.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
  (./dissertation.aux
 (./chapters/declaration.aux) (./chapters/abstract.aux)
 (./chapters/introduction.aux) (./chapters/background.aux)
 (./chapters/program_design.aux) (./chapters/implementation.aux)
-(./chapters/usability_evaluation.aux) (./chapters/appendix.aux))
+(./chapters/usability_evaluation.aux)
+(./chapters/testing_and_performance_assessment.aux)
+(./chapters/conclusion_and_reflection.aux) (./chapters/appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 24B91727921E34A1353A4BE656CEB221;4804.
+(rerunfilecheck)             Checksum: 4CA09E877BC1B6DEEAC58F874EC88700;4935.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1116,13 +1138,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 105.
  ) 
 Here is how much of TeX's memory you used:
- 12798 strings out of 492995
- 194633 string characters out of 6132705
+ 12820 strings out of 492995
+ 195351 string characters out of 6132705
  318117 words of memory out of 5000000
- 15670 multiletter control sequences out of 15000+600000
+ 15674 multiletter control sequences out of 15000+600000
  50050 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 50i,12n,95p,984b,1954s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,12n,95p,984b,1952s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</usr/loca
 l/texlive/2017/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/local/t
@@ -1134,10 +1156,10 @@ local/texlive/2017/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chri
 8t.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt1095
 .pfb>
-Output written on dissertation.pdf (59 pages, 1372690 bytes).
+Output written on dissertation.pdf (61 pages, 1373527 bytes).
 PDF statistics:
- 952 PDF objects out of 1000 (max. 8388607)
- 827 compressed objects within 9 object streams
- 270 named destinations out of 1000 (max. 500000)
- 679 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 972 PDF objects out of 1000 (max. 8388607)
+ 845 compressed objects within 9 object streams
+ 274 named destinations out of 1000 (max. 500000)
+ 695 words of extra memory for PDF output out of 10000 (max. 10000000)
 

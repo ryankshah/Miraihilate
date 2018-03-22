@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{report}
+
+\usepackage[margin=1.0in]{geometry}
+\usepackage{graphicx}
+\usepackage{setspace, caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{titlesec}
+\usepackage[nottoc]{tocbibind}
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{hhline}
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{rotating}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{listings}
+
+\usepackage[T1]{fontenc}
+\usepackage[bitstream-charter]{mathdesign}
+
+\usepackage[titletoc]{appendix}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+
+\titleformat{\chapter}{\normalfont\huge}{\thechapter.}{20pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-50pt}{6pt}
+
+\doublespacing
+\captionsetup{font=doublespacing}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand\bibname{References}
+
+\usepackage{color}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\usepackage{listings}
+\lstset{language=Java,
+	showspaces=false,
+	showtabs=false,
+	tabsize=2,
+	breaklines=true,
+	showstringspaces=false,
+	breakatwhitespace=true,
+	commentstyle=\color{pgreen},
+	keywordstyle=\color{pblue},
+	stringstyle=\color{pred},
+	basicstyle=\ttfamily,
+	captionpos=b,
+}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+\include{docs/consent_form} \clearpage
+\include{docs/consent_form} \clearpage
+\include{docs/consent_form} \clearpage
+\include{docs/consent_form} \clearpage
+\end{document}

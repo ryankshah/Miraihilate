@@ -8,6 +8,8 @@ A level-1 auxiliary file: chapters/background.aux
 A level-1 auxiliary file: chapters/program_design.aux
 A level-1 auxiliary file: chapters/implementation.aux
 A level-1 auxiliary file: chapters/usability_evaluation.aux
+A level-1 auxiliary file: chapters/testing_and_performance_assessment.aux
+A level-1 auxiliary file: chapters/conclusion_and_reflection.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: chapters/appendix.aux
 Database file #1: references.bib
@@ -16,7 +18,7 @@ Warning--empty journal in aprilunderstanding
 Warning--empty year in aprilunderstanding
 You've used 29 entries,
             1791 wiz_defined-function locations,
-            588 strings with 8670 characters,
+            590 strings with 8755 characters,
 and the built_in function-call counts, 5226 in all, are:
 = -- 453
 > -- 211

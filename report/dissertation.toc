@@ -59,18 +59,20 @@
 \contentsline {section}{\numberline {5.1}Recruitment}{37}{section.5.1}
 \contentsline {section}{\numberline {5.2}Conducting the Study}{37}{section.5.2}
 \contentsline {section}{\numberline {5.3}Results Analysis}{38}{section.5.3}
-\contentsline {chapter}{References}{39}{chapter*.24}
-\contentsline {chapter}{Appendix \numberline {A}Mockup Design Appendix}{42}{Appendix.a.A}
-\contentsline {section}{\numberline {A.1}Mockup Design Consent Form}{42}{section.a.A.1}
-\contentsline {section}{\numberline {A.2}Client Interface Feedback Questionnaire}{43}{section.a.A.2}
-\contentsline {section}{\numberline {A.3}Advanced Scan Feedback Questionnaire}{45}{section.a.A.3}
-\contentsline {section}{\numberline {A.4}Scan History Feedback Questionnaire}{47}{section.a.A.4}
-\contentsline {chapter}{Appendix \numberline {B}Implementation Appendix}{48}{Appendix.a.B}
-\contentsline {section}{\numberline {B.1}Example SSH Scan Log}{48}{section.a.B.1}
-\contentsline {chapter}{Appendix \numberline {C}Usability Evaluation Appendix}{49}{Appendix.a.C}
-\contentsline {section}{\numberline {C.1}Usability Study Consent Form}{49}{section.a.C.1}
-\contentsline {section}{\numberline {C.2}Pre-Study Question Sheet}{50}{section.a.C.2}
-\contentsline {section}{\numberline {C.3}Scenario One}{52}{section.a.C.3}
-\contentsline {section}{\numberline {C.4}Scenario Two}{53}{section.a.C.4}
-\contentsline {section}{\numberline {C.5}Scenario Three}{56}{section.a.C.5}
-\contentsline {section}{\numberline {C.6}Scenario Four}{57}{section.a.C.6}
+\contentsline {chapter}{\numberline {6}Testing and Performance Assessment}{39}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusion and Reflection}{40}{chapter.7}
+\contentsline {chapter}{References}{41}{chapter*.24}
+\contentsline {chapter}{Appendix \numberline {A}Mockup Design Appendix}{44}{Appendix.a.A}
+\contentsline {section}{\numberline {A.1}Mockup Design Consent Form}{44}{section.a.A.1}
+\contentsline {section}{\numberline {A.2}Client Interface Feedback Questionnaire}{45}{section.a.A.2}
+\contentsline {section}{\numberline {A.3}Advanced Scan Feedback Questionnaire}{47}{section.a.A.3}
+\contentsline {section}{\numberline {A.4}Scan History Feedback Questionnaire}{49}{section.a.A.4}
+\contentsline {chapter}{Appendix \numberline {B}Implementation Appendix}{50}{Appendix.a.B}
+\contentsline {section}{\numberline {B.1}Example SSH Scan Log}{50}{section.a.B.1}
+\contentsline {chapter}{Appendix \numberline {C}Usability Evaluation Appendix}{51}{Appendix.a.C}
+\contentsline {section}{\numberline {C.1}Usability Study Consent Form}{51}{section.a.C.1}
+\contentsline {section}{\numberline {C.2}Pre-Study Question Sheet}{52}{section.a.C.2}
+\contentsline {section}{\numberline {C.3}Scenario One}{54}{section.a.C.3}
+\contentsline {section}{\numberline {C.4}Scenario Two}{55}{section.a.C.4}
+\contentsline {section}{\numberline {C.5}Scenario Three}{58}{section.a.C.5}
+\contentsline {section}{\numberline {C.6}Scenario Four}{59}{section.a.C.6}
